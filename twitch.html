@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bushy0 - BushyBot</title>
+    <title>Bushy0</title>
     <link rel="icon" href="https://cdn.discordapp.com/attachments/894876404695572480/897543078339022848/LogoTitle.png"
         type="image/x-icon">
     <link href="style.css" href="text/css" rel="stylesheet">
@@ -33,62 +33,34 @@
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
+
         <div class="text-box">
-            <h1>BushyBot</h1>
-            <p>A music Discord bot for your Discord server! <br> <br> "The Right Bush For You!"</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=889861535856480307&scope=bot&permissions=8"
-                target="_blank" class="hero-btn">Add To Server</a>
+            <h1>My Twitch</h1>
+            <p>You can follow my Twitch below<br> <br> I stream rarely though</p>
+            <a href="https://www.twitch.tv/bushy0"
+                target="_blank" class="hero-btn">Twitch Link</a> <br> <br>
+
+            <!-- Add a placeholder for the Twitch embed -->
+            <div id="twitch-embed"><p>Live Embed</p>
+            </div>
+            <!-- Load the Twitch embed script -->
+            <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+            <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+            <script type="text/javascript">
+                new Twitch.Player("twitch-embed", {
+                    channel: "bushy0"
+                });
+            </script>
         </div>
+
     </section>
 
 
-    <!-- Commands -->
-    <section class="commands">
-        <h1>BushyBot Commands</h1>
-        <div class="centerCom">
-            <div class="commands-col">
-                <h3>Commands</h3>
-                <table border=1 frame=void rules=rows>
-                    <tr>
-                        <th>Command</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td><b>!play</b></td>
-                        <td>Plays a song from Youtube, Spotify, or SoundCloud.</td>
-                    </tr>
-                    <tr>
-                        <td><b>!skip</b></td>
-                        <td>Skips the current song and plays the next in the queue. The Bot leaves if the queue is
-                            empty.</td>
-                    </tr>
-                    <tr>
-                        <td><b>!stop</b></td>
-                        <td>Stops all audio and removes Bot from active voice channel.</td>
-                    </tr>
-                    <tr>
-                        <td><b>!queue</b></td>
-                        <td>Displays current audio track queue.</td>
-                    </tr>
-                    <tr>
-                        <td><b>!loop</b></td>
-                        <td>Loops currents audio track or queue.</td>
-                    </tr>
-                </table>
-            </div>
 
-            <!-- <div class="commands-col">
-                <h3>Moderation Commands</h3>
-                <p>Coming Soon!</p>
-            </div>
-            <div class="commands-col">
-                <h3>Fun Commands</h3>
-                <p>Coming Soon!</p>
 
-            </div> -->
 
-        </div>
-    </section>
+
 
 
     <!-- Footer -->
@@ -127,7 +99,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Toggle Menu Script-->
     <script>
