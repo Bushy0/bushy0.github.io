@@ -423,6 +423,55 @@ td{
     display: flex;
     justify-content: center;
 }
+.Twitch{
+    font-family: 'Source Code Pro', monospace;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(50, 50, 54, .9), rgba(50, 50, 54, 1)),url(images/Bushy4k.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.Twitch h1{
+    font-family: 'Source Code Pro', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 32;    
+}
+.Twitch h2{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 24;    
+}
+.Twitch h3{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 18;
+}
+.Twitch h4{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 16;
+    
+}
+.hTwitch p{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 14;
+}
 
 /* --------- MOBILE --------------------------------------------------------------------------------- */
 /* Use the "row" class for better looking mobile */
@@ -534,6 +583,10 @@ td{
         color: #fff;
         font-size: 14;
         text-align: center;
+    }
+    .twitch-embed{
+        width: 100px;
+        height: 100px;
     }
 }
 
