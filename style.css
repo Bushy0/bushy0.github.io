@@ -423,6 +423,7 @@ td{
     display: flex;
     justify-content: center;
 }
+/* Twitch */
 .Twitch{
     font-family: 'Source Code Pro', monospace;
     min-height: 100vh;
@@ -465,12 +466,21 @@ td{
     font-size: 16;
     
 }
-.hTwitch p{
+.Twitch p{
     font-family: 'arial', monospace;
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
     font-size: 14;
+}
+.Twitch-Video{
+    width: 90%;
+    color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 /* --------- MOBILE --------------------------------------------------------------------------------- */
@@ -584,10 +594,11 @@ td{
         font-size: 14;
         text-align: center;
     }
-    .twitch-embed{
-        width: 100px;
-        height: 100px;
+    .Twitch-Video iframe{
+        width: 100%;
+        height: 100%;
     }
+    
 }
 
     
