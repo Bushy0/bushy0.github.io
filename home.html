@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bushy0 - 404</title>
+    <title>Bushy0</title>
     <link rel="icon" href="https://cdn.discordapp.com/attachments/894876404695572480/897543078339022848/LogoTitle.png"
         type="image/x-icon">
     <link href="style.css" href="text/css" rel="stylesheet">
@@ -19,13 +19,45 @@
 
 <body>
     <!-- Header-->
-    <section class="error">
+    <section class="header">
+        <nav>
+            <a href="home"><img src=images/LogoJustCircle.PNG></a>
+            <h1>BUSHY0</h1>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="bushybot">BUSHYBOT</a></li>
+                    <li><a href="twitch">TWITCH</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
         <div class="text-box">
-            <h1>Error 404</h1>
-            <p>This page isn't avaliable or doesn't exist</p>
-            <a href="home" class="hero-btn">Return Home</a>
+            <h1>Bushy0</h1>
+            <p>Welcome to Bushy0.com! <br><br>
+                This site is a collection of all of Bushy0's content and creations.<br><br>
+                "The Beard of the Future"</p>
         </div>
+
     </section>
+
+    <!-- Body -->
+    <!-- <section class="homeBody">
+        <center>
+            <h1>Hello</h1>
+        </center>
+            <div class="HBody-col">
+                <h1>Hello</h1>
+                <p>Your mother is a cunt</p>
+            </div>
+            <div class="HBody-col">
+                <h1>Hello</h1>
+                <p>Your mother is a cunt</p>
+            </div>
+    </section> -->
+
 
     <!-- Footer -->
     <div class="footer">
@@ -60,13 +92,21 @@
                         <br><br>
                         <a target="_blank">business@bushy0.com</a>
                     </li>
-
                 </div>
             </div>
         </div>
     </div>
 
-
+    <!-- Toggle Menu Script-->
+    <script>
+        var navLinks = document.getElementById('navLinks')
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200";
+        }
+    </script>
 
 </body>
 
