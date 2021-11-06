@@ -73,7 +73,7 @@ nav h1{
     overflow-wrap: break-word
 }
 .World h1{
-    font-family: 'arial', monospace;
+  font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
     margin-right: 25px;
     margin-top: 20px;
@@ -82,21 +82,21 @@ nav h1{
     inline-size: 80%
 }
 .World h2{
-    font-family: 'arial', monospace;
+  font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
     font-size: 32;    
 }
 .World h3{
-    font-family: 'arial', monospace;
+  font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
     font-size: 24;
 }
 .World h4{
-    font-family: 'arial', monospace;
+  font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
@@ -104,7 +104,7 @@ nav h1{
     
 }
 .World p{
-    font-family: 'arial', monospace;
+  font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
