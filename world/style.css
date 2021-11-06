@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.header{
+    font-family: 'Source Code Pro', monospace;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/images/parch.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+nav{
+    display: flex;
+    background-color: rgba(50, 50, 54, 0.75);
+    padding: 1% 1%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #808080;
+    background-color: rgba(50, 50, 54, 0.75);
+}
+nav img{
+    width: 75px;
+    border-right: 1px solid #808080;
+}
+nav h1{
+    font-family: 'Source Code Pro', monospace;
+    color: #fff;
+    display: none;
+    font-size: 20;
+}
+.nav-links{
+    flex: 1;
+    text-align: left;
+    margin-left: 25px;
+}
+.nav-links ul p::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #8CCFB9;
+    display: block;
+    margin: auto;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.WorldHead{
+    font-family: 'Source Code Pro', monospace;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/images/parch.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    overflow-wrap: break-word
+}
+.World h1{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 64;
+    inline-size: 80%
+}
+.World h2{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 32;    
+}
+.World h3{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 24;
+}
+.World h4{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 18;
+    
+}
+.World p{
+    font-family: 'arial', monospace;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #fff;
+    font-size: 16;
+}
+
+
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    margin-left: 25px;;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    /* border: 1px solid #666; */
+  }
+
+  .dropdown button a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
