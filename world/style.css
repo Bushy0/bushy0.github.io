@@ -72,6 +72,9 @@ nav h1{
     padding-bottom: 25px;
     overflow-wrap: break-word
 }
+.WorldHead img{
+  width: 80%;
+}
 .World h1{
   font-family: 'Source Code Pro', monospace;
     margin-left: 25px;
