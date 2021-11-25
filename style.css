@@ -104,6 +104,43 @@ nav h1{
     background: #5f9c88;
     transition: 0.2s;
 }
+/* World 404 Options */
+.world-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid red;
+    padding: 12px 34px;
+    font-size: 14px;
+    background: red;
+    cursor: pointer;
+}
+.world-btn:hover{
+    border: 1px solid red;
+    background: darkred;
+    transition: 0.2s;
+}
+.text-boxWorld{
+    width: 90%;
+    color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ .text-boxWorld h1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+}
+.text-boxWorld p{
+    font-family: 'Cormorant Garamond', serif;
+    margin: 10px 0 40px;
+    font-size: 14px;
+    font-size: 24px;
+    color: #fff;
+} */
+/* //// */
 nav .fa{
     display: none;
 }
@@ -259,6 +296,17 @@ td{
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(128,128,128,0.7) 0%, rgba(128,128,128,0.7)),url(images/Bushy4k.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.errorWorld{
+    font-family: 'Source Code Pro', monospace;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(128,128,128,0.7) 0%, rgba(128,128,128,0.7)),url(images/parch.png);
     background-position: center;
     background-size: cover;
     position: relative;

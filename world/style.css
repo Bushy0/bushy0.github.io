@@ -205,17 +205,3 @@ nav h1{
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
-
-/* 404 */
-  .error{
-    font-family: 'Source Code Pro', monospace;
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(128,128,128,0.7) 0%, rgba(128,128,128,0.7)),url(images/Bushy4k.png);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
