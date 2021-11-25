@@ -1,0 +1,144 @@
+<html>
+<script src="https://use.fontawesome.com/b2b517ceb9.js"></script>
+
+<head>
+    <script>
+        function preloadImages(array) {
+            if (!preloadImages.list) {
+                preloadImages.list = [];
+            }
+            var list = preloadImages.list;
+            for (var i = 0; i < array.length; i++) {
+                var img = new Image();
+                img.onload = function () {
+                    var index = list.indexOf(this);
+                    if (index !== -1) {
+                        // remove image from the array once it's loaded
+                        // for memory consumption reasons
+                        list.splice(index, 1);
+                    }
+                }
+                list.push(img);
+                img.src = array[i];
+            }
+        }
+        preloadImages(["/images/map.png"]);
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bushy0</title>
+    <link rel="icon" href="/images/LogoTitle.png" type="image/x-icon">
+    <link href="style.css" href="text/css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Jim+Nightshade&display=swap');
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header-->
+    <section class="header">
+        <nav>
+            <div class="navbar">
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="home"></i><b>HOME</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="/index">Main Site Home</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="map.html"><b>MAP</b></a>
+                    </button>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#"><b>CONTINENTS</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#"><b>NATIONS</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#"><b>SETTLEMENTS</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#"><b>RACES</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#"><b>RELIGIONS</b> <i class="fa fa-caret-down"></i></a>
+                    </button>
+
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Body -->
+        <div class="WorldHead">
+            <div class="world">
+                <h1>Head 1</h1>
+                <h2>Head 2</h2>
+                <h3>Head 3</h3>
+                <h4>Head 4</h4>
+                <p>Paragraph <br>
+                    <a href="#">Link Here</a>
+                </p>
+                <center><img src="/images/map.png"></center>
+
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>

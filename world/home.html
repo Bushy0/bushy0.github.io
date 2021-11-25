@@ -2,29 +2,6 @@
 <script src="https://use.fontawesome.com/b2b517ceb9.js"></script>
 
 <head>
-    <script>
-        function preloadImages(array) {
-            if (!preloadImages.list) {
-                preloadImages.list = [];
-            }
-            var list = preloadImages.list;
-            for (var i = 0; i < array.length; i++) {
-                var img = new Image();
-                img.onload = function () {
-                    var index = list.indexOf(this);
-                    if (index !== -1) {
-                        // remove image from the array once it's loaded
-                        // for memory consumption reasons
-                        list.splice(index, 1);
-                    }
-                }
-                list.push(img);
-                img.src = array[i];
-            }
-        }
-        preloadImages(["/images/map.png"]);
-    </script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bushy0</title>
     <link rel="icon" href="/images/LogoTitle.png" type="image/x-icon">
@@ -59,7 +36,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn"><a href="#"><b>MAP</b></a>
+                    <button class="dropbtn"><a href="map.html"><b>MAP</b></a>
                     </button>
                 </div>
 
@@ -131,8 +108,6 @@
                 <p>Paragraph <br>
                     <a href="#">Link Here</a>
                 </p>
-                <center><img src="/images/map.png" width="8192" height="4096"></center>
-
             </div>
         </div>
     </section>
