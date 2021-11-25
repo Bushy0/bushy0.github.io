@@ -24,6 +24,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  border: 1px solid #1d1b31;
 }
 .sidebar .logo-details i{
   font-size: 30px;
@@ -191,7 +192,8 @@
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{
-  padding: 10px;
+  margin-top: 50px;
+  padding: 0px;
 }
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
@@ -209,25 +211,54 @@
   font-size: 12px;
 }
 .home-section{
+  text-indent: 25px;
   position: relative;
-  background: #E4E9F7;
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(images/Bushy4k.png);
+  background-color: #E4E9F7;
+  background-size: cover;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
   transition: all 0.5s ease;
+}
+.home-section h1{
+  font-size: 32px;
+  text-indent: 20px;
+  color: #fff
+}
+.home-section h2{
+  font-size: 24px;
+  text-indent: 20px;
+  color: #fff
+}
+.home-section h3{
+  font-size: 20px;
+  text-indent: 20px;
+  color: #fff
+}
+.home-section p{
+  font-size: 18px;
+  text-indent: 20px;
+  color: #fff
 }
 .sidebar.close ~ .home-section{
   left: 78px;
   width: calc(100% - 78px);
 }
 .home-section .home-content{
+  border-bottom: 1px solid #1d1b31;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  text-align: center;
+  background-color: #70c4a9;
+  /* background-color: #E4E9F7; */
   height: 60px;
   display: flex;
   align-items: center;
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #11101d;
+  color: #fff;
   font-size: 35px;
 }
 .home-section .home-content .bx-menu{
@@ -243,3 +274,6 @@
     display: none;
   }
 }
+
+
+/* #E4E9F7 good looking off white*/
