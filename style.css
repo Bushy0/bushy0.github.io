@@ -283,8 +283,21 @@
   text-align: center;
   transform: translate(-50%, -50%);
 }
-
-
+.hero-btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #70c4a9;
+  padding: 12px 34px;
+  font-size: 14px;
+  background: #70c4a9;
+  cursor: pointer;
+}
+.hero-btn:hover{
+  border: 1px solid #70c4a9;
+  background: #5f9c88;
+  transition: 0.2s;
+}
 
 
 
