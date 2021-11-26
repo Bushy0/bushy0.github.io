@@ -27,6 +27,7 @@
   border: 1px solid #1d1b31;
 }
 .sidebar .logo-details i{
+  cursor: pointer;
   font-size: 30px;
   color: #fff;
   height: 50px;
@@ -247,14 +248,19 @@
 }
 .home-section .home-content{
   border-bottom: 1px solid #1d1b31;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  /* border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px; */
   text-align: center;
   background-color: #70c4a9;
   /* background-color: #E4E9F7; */
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
+}
+.home-section .home-content a img{
+  display: inline;
+  float: right
+  
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
