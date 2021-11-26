@@ -1,97 +1,119 @@
-<html>
-<script src="https://use.fontawesome.com/b2b517ceb9.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bushy0 - BushyBot</title>
-    <link rel="icon" href="/images/LogoTitle.png"
-        type="image/x-icon">
-    <link href="style.css" href="text/css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css ">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
-        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-    </style>
-
 </head>
 
 <body>
-    <!-- Header-->
-    <section class="header">
-        <nav>
-            <a href="home"><img src=images/LogoJustCircle.PNG></a>
-            <h1>BUSHY0</h1>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="home">HOME</a></li>
-                    <li><a href="bushybot">BUSHYBOT</a></li>
-                    <li><a href="twitch">TWITCH</a></li>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <!-- <a href="#"><img src="images/LogoJustCircle.PNG" width="75px" height="50px"></a> -->
+            <i class='bx bx-menu'></i>
+            <span class="logo_name">Bushy0 </span>
+            <!-- <i class='bx bx-menu'></i> -->
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="home">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">Home</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="home">Home</a></li>
                 </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-        <div class="text-box">
-            <h1>BushyBot</h1>
-            <p>A music Discord bot for your Discord server! <br> <br> "The Right Bush For You!"</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=889861535856480307&scope=bot&permissions=8"
-                target="_blank" class="hero-btn">Add To Server</a>
+            </li>
+
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-cube-alt'></i>
+                        <span class="link_name">Projects</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Projects</a></li>
+                    <li><a href="bushybot">BushyBot</a></li>
+                    <li><a href="setting">Fantasy Setting</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bxs-user-account'></i>
+                        <span class="link_name">Social Media</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Social Media</a></li>
+                    <li><a href="https://www.twitch.tv/bushy0" target="_blank">Twitch</a></li>
+                    <li><a href="https://discord.gg/bXb2z6HRuJ" target="_blank">Discord</i></a></li>
+                    <li><a href="https://twitter.com/Bushy0_" target="_blank">Twitter</a></li>
+                </ul>
+            </li>
+
+
+            <!-- /////////// -->
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name">Bushy0</div>
+                    </div>
+                    ㅤ
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <a href="home"><img src="images/LogoJustCircle.PNG" width="75px" height="50px"></a>
+            <span class="text">BushyBot</span>
+        </div>
+
+        <div class="bushybot">
+            <h1 >BushyBot</h1>
+            <br>
+            <p>A music Discord bot for your Discord server"</p>
+            <br>
+            <p>Use the button below to add to your server</p>
+            <br>
+            <p style="font-size: 10px;"><i>*Disclaimer: Content marked 'mature' by Youtube does not work with the bot*</i></p>
+
+
+
+
+
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="inner_footer">
-            <div class="row">
-                <div class="logo_container">
-                    <center> <img src=images/LogoWords.png>
-                    </center>
-                </div>
 
-                <div class="footer_third">
-                    <h1>About</h1>
-                    <a href="tos">Terms and Condtions</a>
-                    <br><br>
-                    <a href="privacy">Privacy Policy</a>
-                </div>
-
-                <!-- <div class="footer_third">
-                    <h1>Streamers</h1>
-                    <a href="https://www.twitch.tv/itszurx_" target="_blank">ItsZurx_</a>
-                    <br><br>
-                    <a href="https://www.twitch.tv/peregrineotter" target="_blank">Peregrineotter</a>
-                </div> -->
-
-                <div class="footer_third">
-                    <h1>Contact</h1>
-                    <li>
-                        <a href="https://twitter.com/Bushy0_" target="_blank">Twitter <i class="fa fa-twitter"></i></a>
-                        <br><br>
-                        <a href="https://discord.gg/bXb2z6HRuJ" target="_blank">Discord <i
-                                class="fa fa-discord"></i></a>
-                        <br><br>
-                        <a target="_blank">business@bushy0.com</a>
-                    </li>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Toggle Menu Script-->
     <script>
-        var navLinks = document.getElementById('navLinks')
-        function showMenu() {
-            navLinks.style.right = "0";
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
         }
-        function hideMenu() {
-            navLinks.style.right = "-200";
-        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
     </script>
-
 </body>
 
 </html>
