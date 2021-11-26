@@ -298,8 +298,55 @@
   background: #5f9c88;
   transition: 0.2s;
 }
-
-
+.TosHead{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(50, 50, 54, .9), rgba(50, 50, 54, 1)),url(images/Bushy4k.png);
+  /* background-color: #E4E9F7; */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.TosHead h1{
+  font-family: 'arial', monospace;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+  font-size: 32;    
+}
+.TosHead h2{
+  font-family: 'arial', monospace;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+  font-size: 24;    
+}
+.TosHead h3{
+  font-family: 'arial', monospace;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+  font-size: 18;
+}
+.TosHead h4{
+  font-family: 'arial', monospace;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+  font-size: 16;
+  
+}
+.TosHead p{
+  font-family: 'arial', monospace;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: #fff;
+  font-size: 14;
+}
 
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
