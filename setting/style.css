@@ -214,7 +214,7 @@
 .home-section{
   /* text-indent: 25px; */
   position: relative;
-  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/images/Bushy4k.png);
+  background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/images/parch.png);
   background-color: #E4E9F7;
   background-size: cover;
   height: 100vh;
@@ -245,7 +245,7 @@
 .home-section .home-content{
   border-bottom: 1px solid #1d1b31;
   text-align: center;
-  background-color: #70c4a9;
+  background-color: maroon;
   /* background-color: #E4E9F7; */
   height: 70px;
   display: flex;
@@ -348,79 +348,11 @@
   font-size: 14;
 }
 
-/* 404 Page */
-.error{
-  /* text-indent: 25px; */
-  position: relative;
-  background-image: linear-gradient(rgba(62, 63, 68, 0.384), rgba(74, 74, 75, 0.7)),url(/images/Bushy4k.png);
-  background-color: #E4E9F7;
-  background-size: cover;
-  height: 100vh;
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
-}
-.error h1{
-  font-size: 32px;
-  color: #fff;
-}
-.error h2{
-  font-size: 24px;
-  color: #fff;
-}
-.error h3{
-  font-size: 20px;
-  color: #fff;
-}
-.error p{
-  font-size: 18px;
-  color: #fff;
-}
-.sidebar.close ~ .error{
-  left: 78px;
-  width: calc(100% - 78px);
-}
-.error .home-content{
-  border-bottom: 1px solid #1d1b31;
-  text-align: center;
-  background-color: #70c4a9;
-  /* background-color: #E4E9F7; */
-  height: 70px;
-  display: flex;
-  align-items: center;
-}
-.error .home-content a img{
-  display: inline;
-  float: right
-  
-}
-.error .home-content .bx-menu,
-.error .home-content .text{
-  color: #fff;
-  font-size: 35px;
-}
-.error .home-content .bx-menu{
-  margin: 0 15px;
-  cursor: pointer;
-}
-.error .home-content .text{
-  font-size: 26px;
-  font-weight: 600;
-}
-.home-text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-
-
-
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
   }
 }
+
 
 /* #E4E9F7 good looking off white*/

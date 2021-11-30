@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="icon" href="/images/LogoTitle.png" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <!-- <a href="#"><img src="images/LogoJustCircle.PNG" width="75px" height="50px"></a> -->
+            <i class='bx bx-menu'></i>
+            <span class="logo_name">Bushy0 </span>
+            <!-- <i class='bx bx-menu'></i> -->
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="index">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">Home</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="index">Home</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="iocn-link">
+                    <a>
+                        <i class='bx bx-folder-open'></i>
+                        <span class="link_name">Projects</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name">Projects</a></li>
+                    <li><a href="bushybot">BushyBot</a></li>
+                    <li><a href="setting/home">Fantasy Setting</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="iocn-link">
+                    <a>
+                        <i class='bx bxs-user-account'></i>
+                        <span class="link_name">Social Media</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name">Social Media</a></li>
+                    <li><a href="https://www.twitch.tv/bushy0" target="_blank">Twitch</a></li>
+                    <li><a href="https://discord.gg/bXb2z6HRuJ" target="_blank">Discord</a></li>
+                    <li><a href="https://twitter.com/Bushy0_" target="_blank">Twitter</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="iocn-link">
+                    <a>
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Info</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name">Information</a></li>
+                    <li><a href="tos">Terms of Service</a></li>
+                    <li><a href="privacy">Privacy Policy</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+    <section class="error">
+        <div class="home-content">
+            <a href="/index"><img src="/images/LogoJustCircle.PNG" width="75px" height="50px"></a>
+            <span class="text">404</span>
+        </div>
+        <div class="home-text">
+            <h1>Error 404</h1>
+            <br>
+            <p>This page isn't avaliable or doesn't exist</p>
+            <br>
+            <a href="/home" class="hero-btn">Return Home</a>
+
+
+        </div>
+    </section>
+
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+    </script>
+</body>
+
+</html>
