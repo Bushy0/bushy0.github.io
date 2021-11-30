@@ -12,7 +12,7 @@
   left: 0;
   height: 100vh;
   width: 260px;
-  background: #11101d;
+  background: #282828;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -64,7 +64,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #404040;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -108,7 +108,7 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background:#404040;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -298,10 +298,10 @@
   background: #5f9c88;
   transition: 0.2s;
 }
-.TosHead{
+.mainbody{
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(50, 50, 54, .9), rgba(50, 50, 54, 1)),url(/images/Bushy4k.png);
+  background-image: linear-gradient(rgba(50, 50, 54, .7), rgba(50, 50, 54, .7)),url(/images/parch.png);
   /* background-color: #E4E9F7; */
   background-position: center;
   background-size: cover;
@@ -311,28 +311,28 @@
   padding-top: 25px;
   padding-bottom: 25px;
 }
-.TosHead h1{
+.mainbody h1{
   font-family: 'arial', monospace;
   margin-left: 25px;
   margin-right: 25px;
   color: #fff;
   font-size: 32;    
 }
-.TosHead h2{
+.mainbody h2{
   font-family: 'arial', monospace;
   margin-left: 25px;
   margin-right: 25px;
   color: #fff;
   font-size: 24;    
 }
-.TosHead h3{
+.mainbody h3{
   font-family: 'arial', monospace;
   margin-left: 25px;
   margin-right: 25px;
   color: #fff;
   font-size: 18;
 }
-.TosHead h4{
+.mainbody h4{
   font-family: 'arial', monospace;
   margin-left: 25px;
   margin-right: 25px;
@@ -340,7 +340,7 @@
   font-size: 16;
   
 }
-.TosHead p{
+.mainbody p{
   font-family: 'arial', monospace;
   margin-left: 25px;
   margin-right: 25px;
