@@ -238,6 +238,10 @@
   font-size: 18px;
   color: #fff;
 }
+.mainbody img{
+  width: 100%;
+  height: auto;
+}
 .sidebar.close ~ .home-section{
   left: 78px;
   width: calc(100% - 78px);
