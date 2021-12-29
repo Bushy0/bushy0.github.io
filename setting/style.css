@@ -162,6 +162,71 @@
   top: 50%;
   transform: translateY(-50%);
 }
+/* Scroll */
+.sidebar.close .nav-links li .sub-menu-scroll{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+  max-height: 300px; 
+  overflow-y: scroll;
+}
+.sidebar.close .nav-links li .sub-menu-scroll .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu-scroll .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li:hover .sub-menu-scroll{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu-scroll{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background:#404040;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu-scroll{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu-scroll a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu-scroll a:hover{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu-scroll{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+
+
+/* End of Scroll */
+
 .sidebar .profile-details{
   position: fixed;
   bottom: 100;
