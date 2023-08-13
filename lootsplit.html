@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lootsplit.css">
+    <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <title>Loot Split Calculator | Eikonic</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index">Home</a>
+        <a href="/gatheringmight">Gathering Calculator</a>
+        <a href="/lootsplit">Loot Split Calculator</a>
+    </div>
+    <h1>Loot Split Calculator</h1>
+
+    <label for="splitValue">Value of Split in Silver:</label>
+    <input type="number" id="splitValue" min="0" value="0" onchange="calculateSplits()"
+        oninput="validity.valid||(value='0');">
+    <br>
+
+    <label for="peopleInSplit">Number of People in Split (min 2):</label>
+    <input type="number" id="peopleInSplit" min="2" value="2" onchange="calculateSplits()"
+        oninput="validity.valid||(value='2');">
+    <br>
+
+    <label for="peopleHalfSplit">Number of People with Half Split:</label>
+    <input type="number" id="peopleHalfSplit" min="0" value="0" onchange="calculateSplits()"
+        oninput="validity.valid||(value='0');">
+    <br>
+
+    <h2>Calculated Splits:</h2>
+    <p>Full Split per Person: <span id="fullSplitPerPerson">0</span> Silver</p>
+    <p>Half Split per Person: <span id="halfSplitPerPerson">0</span> Silver</p>
+    <p>Money for Guild: <span id="moneyForGuild">0</span> Silver</p>
+
+    <script>
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function onlyNumbers(event) {
+            const key = event.key;
+            return (key >= '0' && key <= '9') || key === 'Backspace' || key === 'Delete' || key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Tab';
+        }
+
+        document.querySelectorAll(".number-input").forEach(input => {
+            input.addEventListener("keydown", onlyNumbers);
+            input.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+
+
+        function calculateSplits() {
+            const splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
+            const peopleInSplit = Math.max(2, parseInt(document.getElementById("peopleInSplit").value));
+            const peopleHalfSplit = parseInt(document.getElementById("peopleHalfSplit").value);
+
+            if (isNaN(splitValue) || isNaN(peopleInSplit) || isNaN(peopleHalfSplit)) {
+                document.getElementById("fullSplitPerPerson").textContent = "0";
+                document.getElementById("halfSplitPerPerson").textContent = "0";
+                document.getElementById("moneyForGuild").textContent = "0";
+                return;
+            }
+
+            const fullSplitPerPerson = Math.floor(splitValue / peopleInSplit);
+            const halfSplitPerPerson = Math.floor(fullSplitPerPerson / 2);
+            const moneyForGuild = Math.floor(halfSplitPerPerson * peopleHalfSplit);
+
+            document.getElementById("fullSplitPerPerson").textContent = numberWithCommas(fullSplitPerPerson);
+            document.getElementById("halfSplitPerPerson").textContent = numberWithCommas(halfSplitPerPerson);
+            document.getElementById("moneyForGuild").textContent = numberWithCommas(moneyForGuild);
+        }
+    </script>
+</body>
+
+</html>

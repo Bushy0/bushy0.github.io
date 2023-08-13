@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./gatheringmight.css">
+    <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <title>Gathering Calculator | Eikonic</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index">Home</a>
+        <a href="/gatheringmight">Gathering Calculator</a>
+        <a href="/lootsplit">Loot Split Calculator</a>
+    </div>
+
+    <h1>Gathering Might Percentage Calculator</h1>
+    <p>Enter in your current might values for each category.</p>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Gathering</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>Siphoning Mages</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>Outland Treasures</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>Crystal Spiders</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>2v2 Hellgates</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>5v5 Hellgates</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>10v10 Hellgates</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>Corrupted Dungeons</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+        <tr>
+            <td>Castle and Castle Outpost</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
+    </table>
+
+    <button onclick="calculatePercentages()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculatePercentages() {
+            const categoryInputs = document.querySelectorAll(".category-input");
+            let total = 0;
+
+            categoryInputs.forEach(input => {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+
+            if (total === 0) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = "";
+
+            const gatheringValue = parseFloat(categoryInputs[0].value);
+            const gatheringPercentage = (gatheringValue / total) * 100;
+
+            const range = Math.floor(gatheringPercentage / 10);
+
+            if (gatheringPercentage >= 50) {
+                resultElement.innerHTML = `<p>
+                   Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>5,000,000 Silver</b>. Get out there and get more objectives, this is ridiculous. We are not a gathering guild. 
+                    </p>`;
+            } else {
+                const range = Math.floor(gatheringPercentage / 10);
+
+
+                switch (range) {
+                    case 2:
+                        resultElement.innerHTML = `<p>
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>1,000,000 Silver</b>. Mages anyone?
+                    </p>`;
+                        break;
+                        resultElement.innerHTML = `<p>
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>2,000,000 Silver</b>. Mages, Spiders and PvE Outpost are great ways to gain might!
+                    </p>`;
+                        break;
+                    case 4:
+                        resultElement.innerHTML = `<p>
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>3,000,000 Silver</b>. You need to push more objectives. This is kind of pushing it. 
+                    </p>`;
+                        break;
+                    default:
+                        resultElement.innerHTML = `<p>
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe nothing! Yay!</b>
+                    </p>`;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
