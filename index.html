@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <title>Gathering Calculator | Eikonic</title>
+</head>
+
+<body>
+    <h1>Gathering Might Percentage Calculator</h1>
+    <p>Enter in your current might values for each category.</p>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Gathering</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>Siphoning Mages</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>Outland Treasures</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>Crystal Spiders</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>2v2 Hellgates</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>5v5 Hellgates</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>10v10 Hellgates</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>Corrupted Dungeons</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+        <tr>
+            <td>Castle and Castle Outpost</td>
+            <td><input type="number" class="category-input" value="0"></td>
+        </tr>
+    </table>
+
+    <button onclick="calculatePercentages()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculatePercentages() {
+            const categoryInputs = document.querySelectorAll(".category-input");
+            let total = 0;
+
+            categoryInputs.forEach(input => {
+                const value = parseFloat(input.value);
+                if (!isNaN(value)) {
+                    total += value;
+                }
+            });
+
+            if (total === 0) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = "";
+
+            const gatheringValue = parseFloat(categoryInputs[0].value);
+            const gatheringPercentage = (gatheringValue / total) * 100;
+            resultElement.innerHTML = `<p>Percentage of Gathering: ${gatheringPercentage.toFixed(2)}%</p>`;
+        }
+
+    </script>
+</body>
+
+</html>
