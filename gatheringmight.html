@@ -14,7 +14,7 @@
         <a href="/index">Home</a>
         <a href="/gatheringmight">Gathering Might Calculator</a>
         <a href="/lootsplit">Loot Split Calculator</a>
-        <!-- <a href="/builds">Builds</a> -->
+        <a href="/builds">Builds</a>
     </div>
 
     <h1>Gathering Might Percentage Calculator</h1>
@@ -70,6 +70,11 @@
             <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
             </td>
         </tr>
+        <tr>
+            <td>Territory Energy Crystals</td>
+            <td><input type="number" class="category-input" min="0" value="0" oninput="validity.valid||(value='0');">
+            </td>
+        </tr>
     </table>
 
     <button onclick="calculatePercentages()">Calculate</button>
@@ -103,7 +108,7 @@
 
             if (gatheringPercentage >= 50) {
                 resultElement.innerHTML = `<p>
-                   Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>5,000,000 Silver</b>. Get out there and get more objectives, this is ridiculous. We are not a gathering guild. 
+                   Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>5,000,000 Silver</b>.
                     </p>`;
             } else {
                 const range = Math.floor(gatheringPercentage / 10);
@@ -112,17 +117,17 @@
                 switch (range) {
                     case 2:
                         resultElement.innerHTML = `<p>
-                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>1,000,000 Silver</b>. Mages anyone?
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>1,000,000 Silver</b>.
                     </p>`;
                         break;
                     case 3:
                         resultElement.innerHTML = `<p>
-                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>2,000,000 Silver</b>. Mages, Spiders and PvE Outpost are great ways to gain might!
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>2,000,000 Silver</b>.
                     </p>`;
                         break;
                     case 4:
                         resultElement.innerHTML = `<p>
-                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>3,000,000 Silver</b>. You need to get more objectives. This is kind of pushing it. 
+                            Your percentage of <b>Gathering Might</b> is: ${gatheringPercentage.toFixed(2)}%. You owe <b>3,000,000 Silver</b>.
                     </p>`;
                         break;
                     default:
