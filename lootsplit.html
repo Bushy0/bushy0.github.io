@@ -17,66 +17,58 @@
         <a href="/builds">Builds</a>
     </div>
     <h1>Loot Split Calculator</h1>
-
+    <br><br>
+    <p>This calculator divides the total evenly after applying the 10% guild tax.</p>
     <label for="splitValue">Value of Split in Silver:</label>
-    <input type="number" id="splitValue" min="0" value="0" onchange="calculateSplits()"
-        oninput="validity.valid||(value='0');">
+    <input type="text" id="splitValue" value="0" onblur="formatInput(this)">
     <br>
+
 
     <label for="peopleInSplit">Number of People in Split (min 2):</label>
     <input type="number" id="peopleInSplit" min="2" value="2" onchange="calculateSplits()"
         oninput="validity.valid||(value='2');">
     <br>
 
-    <label for="peopleHalfSplit">Number of People with Half Split:</label>
-    <input type="number" id="peopleHalfSplit" min="0" value="0" onchange="calculateSplits()"
-        oninput="validity.valid||(value='0');">
-    <br>
-
-    <h2>Calculated Splits:</h2>
-    <p>Full Split per Person: <span id="fullSplitPerPerson">0</span> Silver</p>
-    <p>Half Split per Person: <span id="halfSplitPerPerson">0</span> Silver</p>
-    <p>Money for Guild: <span id="moneyForGuild">0</span> Silver</p>
+    <h2>Calculated Split:</h2>
+    <p><b>10% Guild Tax: </b><span id="moneyForGuild">0</span> Silver</p>
+    <p><b>Full Split per Person: </b><span id="fullSplitPerPerson">0</span> Silver</p>
 
     <script>
+        function formatInput(input) {
+            let value = input.value.replace(/[^\d]/g, '');
+            if (value.length > 0) {
+                value = numberWithCommas(value);
+            } else {
+                value = "0";
+            }
+            input.value = value;
+            calculateSplits();
+        }
+
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        function onlyNumbers(event) {
-            const key = event.key;
-            return (key >= '0' && key <= '9') || key === 'Backspace' || key === 'Delete' || key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Tab';
-        }
-
-        document.querySelectorAll(".number-input").forEach(input => {
-            input.addEventListener("keydown", onlyNumbers);
-            input.addEventListener("input", function () {
-                this.value = this.value.replace(/[^0-9]/g, '');
-            });
-        });
-
-
         function calculateSplits() {
             const splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
             const peopleInSplit = Math.max(2, parseInt(document.getElementById("peopleInSplit").value));
-            const peopleHalfSplit = parseInt(document.getElementById("peopleHalfSplit").value);
+            const guildTax = splitValue * 0.10;
 
-            if (isNaN(splitValue) || isNaN(peopleInSplit) || isNaN(peopleHalfSplit)) {
+            if (isNaN(splitValue) || isNaN(peopleInSplit)) {
                 document.getElementById("fullSplitPerPerson").textContent = "0";
-                document.getElementById("halfSplitPerPerson").textContent = "0";
                 document.getElementById("moneyForGuild").textContent = "0";
                 return;
             }
 
-            const fullSplitPerPerson = Math.floor(splitValue / peopleInSplit);
+            const fullSplitPerPerson = Math.floor((splitValue - guildTax) / peopleInSplit);
             const halfSplitPerPerson = Math.floor(fullSplitPerPerson / 2);
-            const moneyForGuild = Math.floor(halfSplitPerPerson * peopleHalfSplit);
 
             document.getElementById("fullSplitPerPerson").textContent = numberWithCommas(fullSplitPerPerson);
-            document.getElementById("halfSplitPerPerson").textContent = numberWithCommas(halfSplitPerPerson);
-            document.getElementById("moneyForGuild").textContent = numberWithCommas(moneyForGuild);
+            document.getElementById("moneyForGuild").textContent = numberWithCommas(guildTax);
         }
+
     </script>
+
 </body>
 
 </html>
