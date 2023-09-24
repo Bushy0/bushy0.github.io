@@ -63,10 +63,9 @@
             const fullSplitPerPerson = Math.floor((splitValue - guildTax) / peopleInSplit);
             const halfSplitPerPerson = Math.floor(fullSplitPerPerson / 2);
 
-            document.getElementById("fullSplitPerPerson").textContent = numberWithCommas(fullSplitPerPerson);
-            document.getElementById("moneyForGuild").textContent = numberWithCommas(guildTax);
+            document.getElementById("fullSplitPerPerson").textContent = numberWithCommas(Math.floor(fullSplitPerPerson));
+            document.getElementById("moneyForGuild").textContent = numberWithCommas(Math.ceil(guildTax));
         }
-
     </script>
 
 </body>
