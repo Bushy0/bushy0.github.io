@@ -53,3 +53,17 @@ p {
 .navbar a:hover {
     background-color: #294157;
 }
+
+button {
+    background-color: #c9a88a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #d35400;
+}

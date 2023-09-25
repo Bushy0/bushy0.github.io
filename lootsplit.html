@@ -12,26 +12,40 @@
 <body>
     <div class="navbar">
         <a href="/index">Home</a>
-        <a href="/gatheringmight">Gathering Might Calculator</a>
+        <!-- <a href="/gatheringmight">Gathering Might Calculator</a> -->
         <a href="/lootsplit">Loot Split Calculator</a>
         <a href="/builds">Builds</a>
     </div>
     <h1>Loot Split Calculator</h1>
     <br><br>
-    <p>This calculator divides the total evenly after applying the 10% guild tax.</p>
+    <p>This calculator divides the total evenly after applying the 10% guild tax or <br>adds the guild as 1 person in
+        the split. The guild recieves the lower amount</p>
+
     <label for="splitValue">Value of Split in Silver:</label>
     <input type="text" id="splitValue" value="0" onblur="formatInput(this)">
     <br>
-
 
     <label for="peopleInSplit">Number of People in Split (min 2):</label>
     <input type="number" id="peopleInSplit" min="2" value="2" onchange="calculateSplits()"
         oninput="validity.valid||(value='2');">
     <br>
 
-    <h2>Calculated Split:</h2>
-    <p><b>10% Guild Tax: </b><span id="moneyForGuild">0</span> Silver</p>
-    <p><b>Full Split per Person: </b><span id="fullSplitPerPerson">0</span> Silver</p>
+    <button onclick="calculatePercentages()">Calculate</button>
+    <br>
+    <div style="display: inline-block; margin-right: 25px; margin-top: 20px; border: solid 1px #fff; background-color: gray; padding: 5px; border-radius: 10px; width: 300px;"
+        id="GuildAdded10percentDiv">
+        <h2><u>10% Total Tax:</u></h2>
+        <p><b>Guild Tax: </b><span id="Guild10%">0</span> Silver</p>
+        <p><b>Full Split per Person: </b><span id="fullSplit10percent">0</span> Silver</p>
+    </div>
+
+    <div style="display: inline-block; margin-right: 25px; border: solid 1px #fff; background-color: gray; padding: 5px; border-radius: 10px; width: 300px;"
+        id="GuildAddedOneDiv">
+        <h2><u>Added as 1 Member</u></h2>
+        <p><b>Guild Tax: </b><span id="GuildAddedOne">0</span> Silver</p>
+        <p><b>Full Split per Person: </b><span id="fullSplitAddedOne">0</span> Silver</p>
+
+    </div>
 
     <script>
         function formatInput(input) {
@@ -55,16 +69,36 @@
             const guildTax = splitValue * 0.10;
 
             if (isNaN(splitValue) || isNaN(peopleInSplit)) {
-                document.getElementById("fullSplitPerPerson").textContent = "0";
-                document.getElementById("moneyForGuild").textContent = "0";
+                document.getElementById("fullSplit10percent").textContent = "0";
+                document.getElementById("Guild10%").textContent = "0";
                 return;
             }
+            const fullSplit10percent = Math.floor((splitValue - guildTax) / peopleInSplit);
 
-            const fullSplitPerPerson = Math.floor((splitValue - guildTax) / peopleInSplit);
-            const halfSplitPerPerson = Math.floor(fullSplitPerPerson / 2);
+            const fullSplitAddedOne = Math.floor(splitValue / (peopleInSplit + 1));
 
-            document.getElementById("fullSplitPerPerson").textContent = numberWithCommas(Math.floor(fullSplitPerPerson));
-            document.getElementById("moneyForGuild").textContent = numberWithCommas(Math.ceil(guildTax));
+            document.getElementById("fullSplit10percent").textContent = numberWithCommas(Math.floor(fullSplit10percent));
+            document.getElementById("Guild10%").textContent = numberWithCommas(Math.ceil(guildTax));
+            document.getElementById("GuildAddedOne").textContent = numberWithCommas(Math.floor(fullSplitAddedOne));
+            document.getElementById("fullSplitAddedOne").textContent = numberWithCommas(Math.floor(fullSplitAddedOne));
+
+            valueCheck(guildTax, fullSplitAddedOne)
+        }
+
+        function valueCheck(guildTax, fullSplitAddedOne) {
+
+            if (guildTax > fullSplitAddedOne) {
+                console.log('10%more')
+                document.getElementById("GuildAddedOneDiv").style.backgroundColor = "#59a673";
+                document.getElementById("GuildAdded10percentDiv").style.backgroundColor = "grey";
+
+
+            } else if (fullSplitAddedOne > guildTax) {
+                console.log('splitAddedOneMore')
+                document.getElementById("GuildAdded10percentDiv").style.backgroundColor = "#59a673";
+                document.getElementById("GuildAddedOneDiv").style.backgroundColor = "grey";
+            }
+
         }
     </script>
 
