@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./refine.css">
+    <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <title>Refine Calculator | Eikonic</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index">Home</a>
+        <!-- <a href="/gatheringmight">Gathering Might Calculator</a> -->
+        <a href="/lootsplit">Loot Split Calculator</a>
+        <a href="/refine">Refine Calculator</a>
+        <a href="/builds">Builds</a>
+    </div>
+
+    <h1>Refining Calculator</h1>
+    <br><br>
+
+    <label for="tierSelect">Select Tier:</label>
+    <select id="tierSelect">
+        <option value="T2">T2</option>
+        <option value="T3">T3</option>
+        <option value="T4">T4</option>
+        <option value="T5">T5</option>
+        <option value="T6">T6</option>
+        <option value="T7">T7</option>
+        <option value="T8">T8</option>
+    </select>
+
+    <br><br>
+
+
+    <label for="amountInput">Amount to Refine:</label>
+
+    <br>
+    <h4 id="minForOne"></h4>
+    <input type="number" id="amountInput" placeholder="Enter amount to refine:">
+
+
+    <br><br>
+
+    <button onclick="calculateRawMaterials()">Calculate</button>
+
+    <div id="results">
+        <h2>Raw Materials Required:</h2>
+        <p id="rawMaterialsList"></p>
+    </div>
+
+    <script>
+
+
+        tierSelect.addEventListener("change", function () {
+            const selectedTier = tierSelect.value;
+            const minValues = {
+                "T2": "",
+                "T3": "Minimum 2",
+                "T4": "Minimum 2",
+                "T5": "Minimum 3",
+                "T6": "Minimum 4",
+                "T7": "Minimum 5",
+                "T8": "Minimum 5"
+            };
+            minForOne.textContent = minValues[selectedTier];
+        });
+
+
+        function calculateRawMaterials() {
+
+            const rawToRefined = {
+                T2: 1,
+                T3: 2,
+                T4: 2,
+                T5: 3,
+                T6: 4,
+                T7: 5,
+                T8: 5,
+            };
+
+            const tier = document.getElementById("tierSelect").value;
+            const amountToRefine = parseInt(document.getElementById("amountInput").value, 10);
+            const totalCanBeMade = amountToRefine / rawToRefined[tier];
+
+
+            switch (tier) {
+                case "T2":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T2 Units`;
+                    break;
+                case "T3":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T3 Units`;
+
+                    break;
+                case "T4":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T4 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T4 Units`;
+                    break;
+                case "T5":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T4 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T5 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T5 Units`;
+                    break;
+                case "T6":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T4 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T5 Raw: ${Number(totalCanBeMade * 3).toLocaleString("en-US")}
+                <br>T6 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T6Units`;
+                    break;
+                case "T7":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T4 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T5 Raw: ${Number(totalCanBeMade * 3).toLocaleString("en-US")}
+                <br>T6 Raw: ${Number(totalCanBeMade * 4).toLocaleString("en-US")}
+                <br>T7 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T7 Units`;
+                    break;
+                case "T8":
+                    rawMaterialsList.innerHTML = `<b>Required Materials</b>
+                <br>T2 Raw: ${Number(totalCanBeMade * 1).toLocaleString("en-US")}
+                <br>T3 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T4 Raw: ${Number(totalCanBeMade * 2).toLocaleString("en-US")}
+                <br>T5 Raw: ${Number(totalCanBeMade * 3).toLocaleString("en-US")}
+                <br>T6 Raw: ${Number(totalCanBeMade * 4).toLocaleString("en-US")}
+                <br>T7 Raw: ${Number(totalCanBeMade * 5).toLocaleString("en-US")}
+                <br>T8 Raw: ${Number(amountToRefine).toLocaleString("en-US")}
+                <br><br><b>Total Refined Made</b>: <br>${Number(totalCanBeMade).toLocaleString("en-US")} T8 Units`;
+                    break;
+                default:
+                    console.log("Option not recognized");
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
