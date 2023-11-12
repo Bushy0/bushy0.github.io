@@ -114,6 +114,14 @@ body {
 }
 
 /* // */
+.tankEngage {
+    background-color: #326a9b;
+}
+
+.tankEngage2 {
+    background-color: #275176;
+}
+
 .tank {
     background-color: #224666;
 }
@@ -142,11 +150,11 @@ body {
 
 /* // */
 .ranged {
-    background-color: #6d3b3b;
+    background-color: #b37203;
 }
 
 .ranged2 {
-    background-color: #492727;
+    background-color: #8b5801;
 }
 
 /* // */
