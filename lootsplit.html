@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./lootsplit.css">
     <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
     <title>Loot Split Calculator | Eikonic</title>
 
 
@@ -47,11 +49,18 @@
 
     <button onclick="calculatePercentages()">Calculate</button>
     <br>
+    <br>
     <div style="display: inline-block; margin-right: 25px; margin-top: 20px; border: solid 1px #fff; background-color: gray; padding: 5px; border-radius: 10px; width: 300px;"
         id="GuildAdded10percentDiv">
         <h2><u>10% Total Tax:</u></h2>
         <p><b>Guild Tax: </b><span id="Guild10%">0</span> Silver</p>
         <p><b>Full Split per Person: </b><span id="fullSplit10percent">0</span> Silver</p>
+        <center>
+            <button style="display: none;" id="copyButton10" onclick="copyToClipboard10percent()">
+                <i class='bx bx-clipboard' style="font-size: 16px;"></i>
+            </button>
+        </center>
+
     </div>
 
     <div style="display: inline-block; margin-right: 25px; border: solid 1px #fff; background-color: gray; padding: 5px; border-radius: 10px; width: 300px;"
@@ -59,6 +68,11 @@
         <h2><u>Added as 1 Member</u></h2>
         <p><b>Guild Tax: </b><span id="GuildAddedOne">0</span> Silver</p>
         <p><b>Full Split per Person: </b><span id="fullSplitAddedOne">0</span> Silver</p>
+        <center>
+            <button style="display: none;" id="copyButtonFull" onclick="copyToClipboardOneFull()">
+                <i class='bx bx-clipboard' style="font-size: 16px;"></i>
+            </button>
+        </center>
 
     </div>
 
@@ -78,19 +92,21 @@
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
+        let splitValue, peopleInSplit, guildTax, fullSplit10percent, fullSplitAddedOne;
         function calculateSplits() {
-            const splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
-            const peopleInSplit = Math.max(2, parseInt(document.getElementById("peopleInSplit").value));
-            const guildTax = splitValue * 0.10;
+            splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
+            peopleInSplit = Math.max(2, parseInt(document.getElementById("peopleInSplit").value));
+            guildTax = splitValue * 0.10;
 
             if (isNaN(splitValue) || isNaN(peopleInSplit)) {
                 document.getElementById("fullSplit10percent").textContent = "0";
                 document.getElementById("Guild10%").textContent = "0";
                 return;
             }
-            const fullSplit10percent = Math.floor((splitValue - guildTax) / peopleInSplit);
 
-            const fullSplitAddedOne = Math.floor(splitValue / (peopleInSplit + 1));
+            fullSplit10percent = Math.floor((splitValue - guildTax) / peopleInSplit);
+
+            fullSplitAddedOne = Math.floor(splitValue / (peopleInSplit + 1));
 
             document.getElementById("fullSplit10percent").textContent = numberWithCommas(Math.floor(fullSplit10percent));
             document.getElementById("Guild10%").textContent = numberWithCommas(Math.ceil(guildTax));
@@ -103,18 +119,33 @@
         function valueCheck(guildTax, fullSplitAddedOne) {
 
             if (guildTax > fullSplitAddedOne) {
-                console.log('10%more')
                 document.getElementById("GuildAddedOneDiv").style.backgroundColor = "#59a673";
                 document.getElementById("GuildAdded10percentDiv").style.backgroundColor = "grey";
 
+                document.getElementById("copyButtonFull").style.display = "block"
+                document.getElementById("copyButton10").style.display = "none"
+
 
             } else if (fullSplitAddedOne > guildTax) {
-                console.log('splitAddedOneMore')
                 document.getElementById("GuildAdded10percentDiv").style.backgroundColor = "#59a673";
                 document.getElementById("GuildAddedOneDiv").style.backgroundColor = "grey";
+
+                document.getElementById("copyButton10").style.display = "block"
+                document.getElementById("copyButtonFull").style.display = "none"
             }
 
         }
+
+        function copyToClipboard10percent() {
+            const value = document.getElementById("fullSplit10percent")
+            navigator.clipboard.writeText(value.innerHTML)
+        }
+        function copyToClipboardOneFull() {
+            const value = document.getElementById("fullSplitAddedOne")
+            navigator.clipboard.writeText(value.innerHTML)
+        }
+
+
     </script>
 
 </body>
