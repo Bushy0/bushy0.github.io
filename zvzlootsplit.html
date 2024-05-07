@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./lootsplit.css">
+        <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Loot Split Calculator | Eikonic</title>
+
+
+        <meta property="og:url" content="https://bushy0.github.io/lootsplit">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Eikonic Lootsplit">
+        <meta property="og:description" content=" ">
+        <meta property="og:image" content="https://bushy0.github.io/images/guildemblem.png">
+
+        <meta name="twitter:title" content="Eikonic Lootsplit">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="https://bushy0.github.io">
+        <meta property="twitter:url" content="https://bushy0.github.io/lootsplit">
+        <meta name="twitter:description" content=" ">
+        <meta name="twitter:image" content="https://bushy0.github.io/images/guildemblem.png">
+        <meta content="#69A891" data-react-helmet="true" name="theme-color" />
+    </head>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index">Home</a>
+        <a href="/lootsplit">Loot Split Calculator</a>
+        <a href="/zvzlootsplit">ZVZ Loot Split</a>
+        <!-- <a href="/refine">Refine Calculator</a>
+        <a href="/builds">Builds</a> -->
+    </div>
+
+
+    <h1>ZvZ Loot Split Calculator</h1>
+    <br><br>
+    <label for="splitValue"><b>Value of Split in Silver:</b></label>
+    <input type="text" id="splitValue" value="0" onclick="this.select()" onblur="formatInput(this)">
+
+    <hr style="width: 32%;">
+
+    <label for="guild1Attendance">Guild 1 Attendance:</label>
+    <input type="number" id="guild1Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
+    <br>
+
+    <label for="guild2Attendance">Guild 2 Attendance:</label>
+    <input type="number" id="guild2Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
+    <br>
+
+    <label for="guild3Attendance">Guild 3 Attendance:</label>
+    <input type="number" id="guild3Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
+    <br>
+
+    <label for="guild4Attendance">Guild 4 Attendance:</label>
+    <input type="number" id="guild4Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
+    <br>
+
+    <button onclick="calculateSplits()">Calculate</button>
+    <br>
+    <br>
+
+    <div id="splitResults">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <script>
+        function formatInput(input) {
+            let value = input.value.replace(/[^\d]/g, '');
+            if (value.length > 0) {
+                value = numberWithCommas(value);
+            } else {
+                value = "0";
+            }
+            input.value = value;
+            calculateSplits();
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function calculateSplits() {
+            let splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
+            let guild1Attendance = parseInt(document.getElementById("guild1Attendance").value);
+            let guild2Attendance = parseInt(document.getElementById("guild2Attendance").value);
+            let guild3Attendance = parseInt(document.getElementById("guild3Attendance").value);
+            let guild4Attendance = parseInt(document.getElementById("guild4Attendance").value);
+
+            let totalAttendance = guild1Attendance + guild2Attendance + guild3Attendance + guild4Attendance;
+
+            if (isNaN(splitValue) || isNaN(totalAttendance) || totalAttendance === 0) {
+                document.getElementById("splitResults").innerHTML = "<p>Please enter valid numbers.</p>";
+                return;
+            }
+
+            let guild1Share = (guild1Attendance / totalAttendance) * splitValue;
+            let guild2Share = (guild2Attendance / totalAttendance) * splitValue;
+            let guild3Share = (guild3Attendance / totalAttendance) * splitValue;
+            let guild4Share = (guild4Attendance / totalAttendance) * splitValue;
+
+            document.getElementById("splitResults").innerHTML = `
+                <h2>Split Results:</h2>
+                <p>Guild 1: ${numberWithCommas(Math.floor(guild1Share))}</p>
+                <p>Guild 2: ${numberWithCommas(Math.floor(guild2Share))}</p>
+                <p>Guild 3: ${numberWithCommas(Math.floor(guild3Share))}</p>
+                <p>Guild 4: ${numberWithCommas(Math.floor(guild4Share))}</p>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>
