@@ -2,32 +2,49 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZvZ Loot Split | Eikonic</title>
+    <link rel="stylesheet" href="./lootsplit.css">
+    <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            background-image: linear-gradient(#1a1a1ac8, #1a1a1ac8), url(./images/guildemblem.png);
+        }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./lootsplit.css">
-        <link rel="icon" href="./images/guildemblem.png" type="image/x-icon">
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        h1 {
+            color: #c9a88a;
+        }
 
-        <title>Loot Split Calculator | Eikonic</title>
+        label {
+            display: inline-block;
+            width: 120px;
+            /* Adjust width as needed */
+            text-align: right;
+            margin-right: 10px;
+        }
 
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #314E68;
+            color: #fff;
+            width: calc(30% - 160px);
+            /* Adjust width as needed */
+        }
 
-        <meta property="og:url" content="https://bushy0.github.io/lootsplit">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Eikonic Lootsplit">
-        <meta property="og:description" content=" ">
-        <meta property="og:image" content="https://bushy0.github.io/images/guildemblem.png">
-
-        <meta name="twitter:title" content="Eikonic Lootsplit">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="https://bushy0.github.io">
-        <meta property="twitter:url" content="https://bushy0.github.io/lootsplit">
-        <meta name="twitter:description" content=" ">
-        <meta name="twitter:image" content="https://bushy0.github.io/images/guildemblem.png">
-        <meta content="#69A891" data-react-helmet="true" name="theme-color" />
-    </head>
-
+        .input-container {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,33 +56,47 @@
         <a href="/builds">Builds</a> -->
     </div>
 
-
     <h1>ZvZ Loot Split Calculator</h1>
     <br><br>
-    <label for="splitValue"><b>Value of Split in Silver:</b></label>
+    <label for="splitValue">Value of Split:</label>
     <input type="text" id="splitValue" value="0" onclick="this.select()" onblur="formatInput(this)">
-
-    <hr style="width: 32%;">
-
-    <label for="guild1Attendance">Guild 1 Attendance:</label>
-    <input type="number" id="guild1Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
     <br>
 
-    <label for="guild2Attendance">Guild 2 Attendance:</label>
-    <input type="number" id="guild2Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
-    <br>
+    <div class="input-container">
+        <label for="guild1Name">Name:</label>
+        <input type="text" id="guild1Name" value="Guild 1" onclick="this.select()" onchange="calculateSplits()">
+        <label for=" guild1Attendance">Attendance:</label>
+        <input type="number" id="guild1Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
 
-    <label for="guild3Attendance">Guild 3 Attendance:</label>
-    <input type="number" id="guild3Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
-    <br>
+    <!-- Repeat the same for other guilds -->
+    <div class="input-container">
+        <label for="guild2Name">Name:</label>
+        <input type="text" id="guild2Name" value="Guild 2" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild2Attendance">Attendance:</label>
+        <input type="number" id="guild2Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
 
-    <label for="guild4Attendance">Guild 4 Attendance:</label>
-    <input type="number" id="guild4Attendance" min="0" value="0" onclick="this.select()" onchange="calculateSplits()">
-    <br>
+    <div class="input-container">
+        <label for="guild3Name">Name:</label>
+        <input type="text" id="guild3Name" value="Guild 3" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild3Attendance">Attendance:</label>
+        <input type="number" id="guild3Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
+    <div class="input-container">
+        <label for="guild4Name">Name:</label>
+        <input type="text" id="guild4Name" value="Guild 4" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild4Attendance">Attendance:</label>
+        <input type="number" id="guild4Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
 
     <button onclick="calculateSplits()">Calculate</button>
-    <br>
-    <br>
+
 
     <div id="splitResults">
         <!-- Results will be displayed here -->
@@ -94,6 +125,11 @@
             let guild3Attendance = parseInt(document.getElementById("guild3Attendance").value);
             let guild4Attendance = parseInt(document.getElementById("guild4Attendance").value);
 
+            let guild1Name = document.getElementById("guild1Name").value;
+            let guild2Name = document.getElementById("guild2Name").value;
+            let guild3Name = document.getElementById("guild3Name").value;
+            let guild4Name = document.getElementById("guild4Name").value;
+
             let totalAttendance = guild1Attendance + guild2Attendance + guild3Attendance + guild4Attendance;
 
             if (isNaN(splitValue) || isNaN(totalAttendance) || totalAttendance === 0) {
@@ -108,10 +144,10 @@
 
             document.getElementById("splitResults").innerHTML = `
                 <h2>Split Results:</h2>
-                <p>Guild 1: ${numberWithCommas(Math.floor(guild1Share))}</p>
-                <p>Guild 2: ${numberWithCommas(Math.floor(guild2Share))}</p>
-                <p>Guild 3: ${numberWithCommas(Math.floor(guild3Share))}</p>
-                <p>Guild 4: ${numberWithCommas(Math.floor(guild4Share))}</p>
+                <p>${guild1Name}: ${numberWithCommas(Math.floor(guild1Share))}</p>
+                <p>${guild2Name}: ${numberWithCommas(Math.floor(guild2Share))}</p>
+                <p>${guild3Name}: ${numberWithCommas(Math.floor(guild3Share))}</p>
+                <p>${guild4Name}: ${numberWithCommas(Math.floor(guild4Share))}</p>
             `;
         }
     </script>
