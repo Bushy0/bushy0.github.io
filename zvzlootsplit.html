@@ -79,12 +79,11 @@
     <div class="input-container">
         <label for="guild1Name">Name:</label>
         <input type="text" id="guild1Name" value="Guild 1" onclick="this.select()" onchange="calculateSplits()">
-        <label for=" guild1Attendance">Attendance:</label>
+        <label for="guild1Attendance">Attendance:</label>
         <input type="number" id="guild1Attendance" min="0" value="0" onclick="this.select()"
             onchange="calculateSplits()">
     </div>
 
-    <!-- Repeat the same for other guilds -->
     <div class="input-container">
         <label for="guild2Name">Name:</label>
         <input type="text" id="guild2Name" value="Guild 2" onclick="this.select()" onchange="calculateSplits()">
@@ -109,8 +108,15 @@
             onchange="calculateSplits()">
     </div>
 
-    <button onclick="calculateSplits()">Calculate</button>
+    <div class="input-container">
+        <label for="guild5Name">Name:</label>
+        <input type="text" id="guild5Name" value="Guild 5" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild5Attendance">Attendance:</label>
+        <input type="number" id="guild5Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
 
+    <button onclick="calculateSplits()">Calculate</button>
 
     <div id="splitResults">
         <!-- Results will be displayed here -->
@@ -138,13 +144,15 @@
             let guild2Attendance = parseInt(document.getElementById("guild2Attendance").value);
             let guild3Attendance = parseInt(document.getElementById("guild3Attendance").value);
             let guild4Attendance = parseInt(document.getElementById("guild4Attendance").value);
+            let guild5Attendance = parseInt(document.getElementById("guild5Attendance").value);
 
             let guild1Name = document.getElementById("guild1Name").value;
             let guild2Name = document.getElementById("guild2Name").value;
             let guild3Name = document.getElementById("guild3Name").value;
             let guild4Name = document.getElementById("guild4Name").value;
+            let guild5Name = document.getElementById("guild5Name").value;
 
-            let totalAttendance = guild1Attendance + guild2Attendance + guild3Attendance + guild4Attendance;
+            let totalAttendance = guild1Attendance + guild2Attendance + guild3Attendance + guild4Attendance + guild5Attendance;
 
             if (isNaN(splitValue) || isNaN(totalAttendance) || totalAttendance === 0) {
                 document.getElementById("splitResults").innerHTML = "<p>Please enter valid numbers.</p>";
@@ -155,6 +163,7 @@
             let guild2Share = (guild2Attendance / totalAttendance) * splitValue;
             let guild3Share = (guild3Attendance / totalAttendance) * splitValue;
             let guild4Share = (guild4Attendance / totalAttendance) * splitValue;
+            let guild5Share = (guild5Attendance / totalAttendance) * splitValue;
 
             document.getElementById("splitResults").innerHTML = `
                 <h2>Split Results:</h2>
@@ -162,6 +171,7 @@
                 <p>${guild2Name}: ${numberWithCommas(Math.floor(guild2Share))}</p>
                 <p>${guild3Name}: ${numberWithCommas(Math.floor(guild3Share))}</p>
                 <p>${guild4Name}: ${numberWithCommas(Math.floor(guild4Share))}</p>
+                <p>${guild5Name}: ${numberWithCommas(Math.floor(guild5Share))}</p>
             `;
         }
     </script>
