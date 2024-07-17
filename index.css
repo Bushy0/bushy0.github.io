@@ -4,11 +4,13 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(#1a1a1ac8, #1a1a1ac8), url(./images/guildemblem.png);
+    background-image: linear-gradient(#1a1a1ac8, #1a1a1ac8), url(./images/Bushy4k.png);
+    background-size: cover;
+
 }
 
 .navbar {
-    background-color: #314E68;
+    background-color: #8CCFB9;
     ;
     overflow: hidden;
 }
@@ -24,7 +26,7 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #294157;
+    background-color: #8CCFB9;
 }
 
 .container {
