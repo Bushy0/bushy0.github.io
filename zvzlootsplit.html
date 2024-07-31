@@ -77,6 +77,7 @@
     <input type="text" id="splitValue" value="0" onclick="this.select()" onblur="formatInput(this)">
     <br>
 
+    <!-- Input containers for 10 guilds -->
     <div class="input-container">
         <label for="guild1Name">Name:</label>
         <input type="text" id="guild1Name" value="Guild 1" onclick="this.select()" onchange="calculateSplits()">
@@ -117,6 +118,46 @@
             onchange="calculateSplits()">
     </div>
 
+    <div class="input-container">
+        <label for="guild6Name">Name:</label>
+        <input type="text" id="guild6Name" value="Guild 6" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild6Attendance">Attendance:</label>
+        <input type="number" id="guild6Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
+    <div class="input-container">
+        <label for="guild7Name">Name:</label>
+        <input type="text" id="guild7Name" value="Guild 7" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild7Attendance">Attendance:</label>
+        <input type="number" id="guild7Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
+    <div class="input-container">
+        <label for="guild8Name">Name:</label>
+        <input type="text" id="guild8Name" value="Guild 8" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild8Attendance">Attendance:</label>
+        <input type="number" id="guild8Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
+    <div class="input-container">
+        <label for="guild9Name">Name:</label>
+        <input type="text" id="guild9Name" value="Guild 9" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild9Attendance">Attendance:</label>
+        <input type="number" id="guild9Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
+    <div class="input-container">
+        <label for="guild10Name">Name:</label>
+        <input type="text" id="guild10Name" value="Guild 10" onclick="this.select()" onchange="calculateSplits()">
+        <label for="guild10Attendance">Attendance:</label>
+        <input type="number" id="guild10Attendance" min="0" value="0" onclick="this.select()"
+            onchange="calculateSplits()">
+    </div>
+
     <button onclick="calculateSplits()">Calculate</button>
 
     <div id="splitResults">
@@ -141,39 +182,30 @@
 
         function calculateSplits() {
             let splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
-            let guild1Attendance = parseInt(document.getElementById("guild1Attendance").value);
-            let guild2Attendance = parseInt(document.getElementById("guild2Attendance").value);
-            let guild3Attendance = parseInt(document.getElementById("guild3Attendance").value);
-            let guild4Attendance = parseInt(document.getElementById("guild4Attendance").value);
-            let guild5Attendance = parseInt(document.getElementById("guild5Attendance").value);
 
-            let guild1Name = document.getElementById("guild1Name").value;
-            let guild2Name = document.getElementById("guild2Name").value;
-            let guild3Name = document.getElementById("guild3Name").value;
-            let guild4Name = document.getElementById("guild4Name").value;
-            let guild5Name = document.getElementById("guild5Name").value;
+            let guildAttendances = [];
+            let guildNames = [];
+            let totalAttendance = 0;
 
-            let totalAttendance = guild1Attendance + guild2Attendance + guild3Attendance + guild4Attendance + guild5Attendance;
+            for (let i = 1; i <= 10; i++) {
+                let attendance = parseInt(document.getElementById(`guild${i}Attendance`).value);
+                let name = document.getElementById(`guild${i}Name`).value;
+                guildAttendances.push(attendance);
+                guildNames.push(name);
+                totalAttendance += attendance;
+            }
 
             if (isNaN(splitValue) || isNaN(totalAttendance) || totalAttendance === 0) {
                 document.getElementById("splitResults").innerHTML = "<p>Please enter valid numbers.</p>";
                 return;
             }
 
-            let guild1Share = (guild1Attendance / totalAttendance) * splitValue;
-            let guild2Share = (guild2Attendance / totalAttendance) * splitValue;
-            let guild3Share = (guild3Attendance / totalAttendance) * splitValue;
-            let guild4Share = (guild4Attendance / totalAttendance) * splitValue;
-            let guild5Share = (guild5Attendance / totalAttendance) * splitValue;
+            let results = guildAttendances.map((attendance, index) => {
+                let share = (attendance / totalAttendance) * splitValue;
+                return `<p>${guildNames[index]}: ${numberWithCommas(Math.floor(share))}</p>`;
+            }).join("");
 
-            document.getElementById("splitResults").innerHTML = `
-                <h2>Split Results:</h2>
-                <p>${guild1Name}: ${numberWithCommas(Math.floor(guild1Share))}</p>
-                <p>${guild2Name}: ${numberWithCommas(Math.floor(guild2Share))}</p>
-                <p>${guild3Name}: ${numberWithCommas(Math.floor(guild3Share))}</p>
-                <p>${guild4Name}: ${numberWithCommas(Math.floor(guild4Share))}</p>
-                <p>${guild5Name}: ${numberWithCommas(Math.floor(guild5Share))}</p>
-            `;
+            document.getElementById("splitResults").innerHTML = `<h2>Split Results:</h2>${results}`;
         }
     </script>
 
