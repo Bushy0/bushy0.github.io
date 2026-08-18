@@ -1,0 +1,1420 @@
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+
+:root {
+
+    --background:
+        #1a1a1a;
+
+    --panel:
+        rgba(26, 26, 26, 0.88);
+
+    --panel-hover:
+        rgba(35, 35, 35, 0.94);
+
+    --green:
+        #8ccfb9;
+
+    --green-dark:
+        #69a891;
+
+    --tan:
+        #c9a88a;
+
+    --text:
+        #ffffff;
+
+    --muted:
+        #b5b5b5;
+
+    --border:
+        rgba(255, 255, 255, 0.08);
+
+    --radius:
+        8px;
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    color:
+        var(--text);
+
+    background-color:
+        var(--background);
+
+    background-image:
+        linear-gradient(#1a1a1ac8,
+            #1a1a1ac8),
+        url("/images/Bushy4k.png");
+
+    /*
+        IMPORTANT:
+
+        The background has a fixed maximum
+        size instead of "cover".
+
+        This prevents the image from becoming
+        enormous on large screens.
+    */
+
+    background-size:
+        1920px auto;
+
+    background-position:
+        center top;
+
+    background-repeat:
+        no-repeat;
+
+    background-attachment:
+        fixed;
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    position:
+        sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        rgba(18,
+            18,
+            18,
+            0.88);
+
+    border-bottom:
+        1px solid rgba(140,
+            207,
+            185,
+            0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+}
+
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.nav-container {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    width:
+        min(1100px,
+            calc(100% - 30px));
+
+    min-height:
+        64px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================
+   NAV BRAND
+========================================= */
+
+.nav-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        17px;
+
+    font-weight:
+        bold;
+
+    text-decoration:
+        none;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.nav-logo {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+    border:
+        2px solid var(--green);
+
+    box-shadow:
+        0 0 12px rgba(140,
+            207,
+            185,
+            0.2);
+
+}
+
+
+.nav-brand:hover {
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+}
+
+
+.nav-links a {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    min-height:
+        64px;
+
+    padding:
+        0 14px;
+
+    color:
+        #c7c7c7;
+
+    font-size:
+        14px;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+
+.nav-links a:hover {
+
+    color:
+        #ffffff;
+
+    background-color:
+        rgba(140,
+            207,
+            185,
+            0.07);
+
+}
+
+
+/* =========================================
+   ACTIVE NAV LINK
+========================================= */
+
+.nav-links a.active {
+
+    color:
+        var(--green);
+
+    font-weight:
+        bold;
+
+}
+
+
+.nav-links a.active::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        14px;
+
+    right:
+        14px;
+
+    bottom:
+        0;
+
+    height:
+        2px;
+
+    background:
+        var(--green);
+
+    border-radius:
+        2px 2px 0 0;
+
+    box-shadow:
+        0 0 8px rgba(140,
+            207,
+            185,
+            0.4);
+
+}
+
+
+/* =========================================
+   MAIN PAGE CONTAINER
+========================================= */
+
+.page-container {
+
+    width:
+        min(900px,
+            calc(100% - 30px));
+
+    margin:
+        35px auto 50px;
+
+}
+
+
+/* =========================================
+   HOME CARD
+========================================= */
+
+.home-card {
+
+    width:
+        min(700px,
+            100%);
+
+    margin:
+        8vh auto 0;
+
+    padding:
+        45px 40px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(26,
+            26,
+            26,
+            0.88);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        0 10px 40px rgba(0,
+            0,
+            0,
+            0.25);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* =========================================
+   HOME ICON
+========================================= */
+
+.home-icon {
+
+    width:
+        76px;
+
+    height:
+        76px;
+
+    margin:
+        0 auto 20px;
+
+    padding:
+        4px;
+
+    border:
+        2px solid var(--green);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 25px rgba(140,
+            207,
+            185,
+            0.2);
+
+}
+
+
+.home-icon img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+}
+
+
+/* =========================================
+   HOME TITLE
+========================================= */
+
+.page-title {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--tan);
+
+    font-size:
+        clamp(26px,
+            5vw,
+            36px);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+/* =========================================
+   HOME DESCRIPTION
+========================================= */
+
+.page-description {
+
+    max-width:
+        550px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        15px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================
+   HOME LINKS
+========================================= */
+
+.home-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+    width:
+        100%;
+
+}
+
+
+/* =========================================
+   HOME LINK CARD
+========================================= */
+
+.home-link {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        16px 18px;
+
+    color:
+        var(--text);
+
+    text-align:
+        left;
+
+    text-decoration:
+        none;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.035);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        6px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+
+}
+
+
+.home-link:hover {
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.09);
+
+    border-color:
+        rgba(140,
+            207,
+            185,
+            0.25);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================
+   HOME LINK TEXT
+========================================= */
+
+.home-link strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--green);
+
+    font-size:
+        15px;
+
+}
+
+
+.home-link span {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+.home-link .arrow {
+
+    flex-shrink:
+        0;
+
+    color:
+        var(--green);
+
+    font-size:
+        22px;
+
+}
+
+
+/* =========================================
+   GENERAL INPUTS
+========================================= */
+
+input {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        42px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.12);
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+input:hover {
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.16);
+
+}
+
+
+input:focus {
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.18);
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 2px rgba(140,
+            207,
+            185,
+            0.15);
+
+}
+
+
+/* =========================================
+   GENERAL BUTTONS
+========================================= */
+
+button {
+
+    min-height:
+        42px;
+
+    padding:
+        0 20px;
+
+    border:
+        none;
+
+    border-radius:
+        6px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+
+}
+
+
+button:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 500px) {
+
+    .nav-container {
+
+        flex-direction:
+            column;
+
+        padding:
+            10px 0;
+
+    }
+
+
+    .nav-brand {
+
+        margin-bottom:
+            5px;
+
+    }
+
+
+    .nav-links {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .nav-links a {
+
+        min-height:
+            42px;
+
+        padding:
+            0 10px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .nav-links a.active::after {
+
+        left:
+            10px;
+
+        right:
+            10px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE HOME PAGE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .page-container {
+
+        width:
+            calc(100% - 16px);
+
+        margin-top:
+            25px;
+
+    }
+
+
+    .home-card {
+
+        margin-top:
+            25px;
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .home-icon {
+
+        width:
+            64px;
+
+        height:
+            64px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .page-description {
+
+        font-size:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .nav-links a {
+
+        padding:
+            0 7px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .home-card {
+
+        padding:
+            25px 14px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            22px;
+
+    }
+
+}
+
+/* =========================================
+   REFINE CALCULATOR
+========================================= */
+
+.refine-card {
+
+    width:
+        min(600px,
+            100%);
+
+    margin:
+        0 auto;
+
+    padding:
+        25px;
+
+    background:
+        rgba(26,
+            26,
+            26,
+            0.88);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        0 10px 40px rgba(0,
+            0,
+            0,
+            0.25);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+}
+
+
+.refine-field {
+
+    margin-bottom:
+        20px;
+
+    text-align:
+        left;
+
+}
+
+
+.refine-field label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.5px;
+
+}
+
+
+.refine-field select {
+
+    width:
+        100%;
+
+    height:
+        44px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.12);
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.refine-field select:hover {
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.16);
+
+}
+
+
+.refine-field select:focus {
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 2px rgba(140,
+            207,
+            185,
+            0.15);
+
+}
+
+
+.refine-field select option {
+
+    background:
+        #1a1a1a;
+
+    color:
+        #ffffff;
+
+}
+
+
+.refine-field input {
+
+    width:
+        100%;
+
+}
+
+
+.input-help {
+
+    display:
+        block;
+
+    min-height:
+        18px;
+
+    margin-top:
+        6px;
+
+    color:
+        var(--green);
+
+    font-size:
+        12px;
+
+}
+
+
+#calculateButton {
+
+    width:
+        100%;
+
+    background:
+        var(--tan);
+
+    color:
+        #111;
+
+}
+
+
+#calculateButton:hover {
+
+    background:
+        #d6b99b;
+
+}
+
+
+/* =========================================
+   REFINE RESULTS
+========================================= */
+
+.refine-results {
+
+    width:
+        min(600px,
+            100%);
+
+    margin:
+        15px auto 0;
+
+    padding:
+        20px;
+
+    background:
+        rgba(26,
+            26,
+            26,
+            0.88);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        0 10px 40px rgba(0,
+            0,
+            0,
+            0.2);
+
+}
+
+
+.refine-results .results-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.refine-results h2 {
+
+    margin:
+        0;
+
+    color:
+        var(--tan);
+
+    font-size:
+        20px;
+
+}
+
+
+.materials-list {
+
+    text-align:
+        left;
+
+}
+
+
+.materials-title {
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--green);
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.5px;
+
+}
+
+
+/* =========================================
+   MATERIAL ROW
+========================================= */
+
+.material-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        10px 12px;
+
+    margin:
+        6px 0;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.035);
+
+    border-radius:
+        5px;
+
+}
+
+
+.material-row span {
+
+    color:
+        var(--muted);
+
+}
+
+
+.material-row strong {
+
+    color:
+        var(--text);
+
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.refined-total {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        14px 12px;
+
+    margin-top:
+        15px;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.refined-total span {
+
+    color:
+        var(--green);
+
+    font-weight:
+        bold;
+
+}
+
+
+.refined-total strong {
+
+    color:
+        var(--tan);
+
+    text-align:
+        right;
+
+}
+
+
+.error-message {
+
+    margin:
+        0;
+
+    padding:
+        12px;
+
+    color:
+        #e0a0a0;
+
+    background:
+        rgba(180,
+            70,
+            70,
+            0.08);
+
+    border:
+        1px solid rgba(180,
+            70,
+            70,
+            0.2);
+
+    border-radius:
+        5px;
+
+}
+
+
+/* =========================================
+   REFINE MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .refine-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .refine-results {
+
+        padding:
+            15px;
+
+    }
+
+
+    .material-row {
+
+        padding:
+            10px;
+
+    }
+
+
+    .refined-total {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .refined-total strong {
+
+        text-align:
+            left;
+
+    }
+
+}

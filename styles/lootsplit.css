@@ -1,0 +1,1178 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --background: #1a1a1a;
+
+    --panel: rgba(26, 26, 26, 0.88);
+
+    --panel-hover:
+        rgba(35, 35, 35, 0.94);
+
+    --green: #8ccfb9;
+
+    --green-dark: #69a891;
+
+    --tan: #c9a88a;
+
+    --text: #ffffff;
+
+    --muted: #b5b5b5;
+
+    --border:
+        rgba(255, 255, 255, 0.08);
+
+    --radius: 8px;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    color:
+        var(--text);
+
+    background-color:
+        var(--background);
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(#1a1a1ac8,
+            #1a1a1ac8),
+        url("/images/Bushy4k.png");
+
+    background-size:
+        1920px auto;
+
+    background-position:
+        center top;
+
+    background-repeat:
+        no-repeat;
+
+    background-attachment:
+        fixed;
+}
+
+
+/* =========================================
+   MODERN NAVBAR
+========================================= */
+
+.navbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        rgba(18, 18, 18, 0.88);
+
+    border-bottom:
+        1px solid rgba(140,
+            207,
+            185,
+            0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+
+.nav-container {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    width:
+        min(1100px,
+            calc(100% - 30px));
+
+    min-height: 64px;
+
+    margin:
+        0 auto;
+}
+
+
+/* =========================================
+   NAV BRAND
+========================================= */
+
+.nav-brand {
+    display: flex;
+
+    align-items:
+        center;
+
+    gap: 10px;
+
+    color:
+        #ffffff;
+
+    font-size: 17px;
+
+    font-weight:
+        bold;
+
+    text-decoration:
+        none;
+
+    white-space:
+        nowrap;
+}
+
+
+.nav-logo {
+    width: 36px;
+
+    height: 36px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+    border:
+        2px solid var(--green);
+
+    box-shadow:
+        0 0 12px rgba(140,
+            207,
+            185,
+            0.2);
+}
+
+
+.nav-brand:hover {
+    color:
+        var(--green);
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items:
+        center;
+
+    gap: 4px;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    min-height: 64px;
+
+    padding:
+        0 14px;
+
+    color:
+        #c7c7c7;
+
+    font-size:
+        14px;
+
+    text-decoration:
+        none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.nav-links a:hover {
+    color:
+        #ffffff;
+
+    background-color:
+        rgba(140,
+            207,
+            185,
+            0.07);
+}
+
+
+/* =========================================
+   ACTIVE NAV LINK
+========================================= */
+
+.nav-links a.active {
+    color:
+        var(--green);
+
+    font-weight:
+        bold;
+}
+
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 14px;
+
+    right: 14px;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background:
+        var(--green);
+
+    border-radius:
+        2px 2px 0 0;
+
+    box-shadow:
+        0 0 8px rgba(140,
+            207,
+            185,
+            0.4);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.page-container {
+    width:
+        min(900px,
+            calc(100% - 30px));
+
+    margin:
+        35px auto 50px;
+}
+
+
+/* =========================================
+   MODERN PAGE HEADER
+========================================= */
+
+.page-header {
+    position:
+        relative;
+
+    padding:
+        10px 10px 25px;
+
+    margin-bottom:
+        10px;
+}
+
+
+.page-header::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+
+    height: 3px;
+
+    margin:
+        18px auto 0;
+
+    background:
+        var(--green);
+
+    border-radius:
+        3px;
+
+    box-shadow:
+        0 0 10px rgba(140,
+            207,
+            185,
+            0.35);
+}
+
+
+.page-header h1 {
+    margin:
+        0 0 8px;
+
+    color:
+        var(--tan);
+
+    font-size:
+        clamp(26px,
+            4vw,
+            36px);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -0.5px;
+}
+
+
+.page-header p {
+    margin:
+        0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================
+   LOOT VALUE CARD
+========================================= */
+
+.loot-card {
+    width: 100%;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background-color:
+        var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+}
+
+
+.loot-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+}
+
+
+#splitValue {
+    width:
+        min(400px,
+            100%);
+}
+
+
+/* =========================================
+   GUILD LIST
+========================================= */
+
+.guild-list {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   GUILD ROW
+========================================= */
+
+.input-container {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(120px, 30%) 42px;
+
+    gap: 15px;
+
+    width: 100%;
+
+    padding:
+        14px 16px;
+
+    background-color:
+        var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    text-align:
+        left;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.input-container:hover {
+    background-color:
+        var(--panel-hover);
+
+    border-color:
+        rgba(140,
+            207,
+            185,
+            0.2);
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.field {
+    min-width: 0;
+
+    width: 100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap: 6px;
+}
+
+
+.field label {
+    display:
+        block;
+
+    margin: 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input {
+    display:
+        block;
+
+    width: 100%;
+
+    height: 42px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background-color:
+        rgba(140,
+            207,
+            185,
+            0.12);
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input:hover {
+    background-color:
+        rgba(140,
+            207,
+            185,
+            0.16);
+}
+
+
+input:focus {
+    background-color:
+        rgba(140,
+            207,
+            185,
+            0.18);
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 2px rgba(140,
+            207,
+            185,
+            0.15);
+}
+
+
+input[type="number"] {
+    width: 100%;
+
+    text-align:
+        left;
+}
+
+
+/* =========================================
+   BUTTON CONTAINER
+========================================= */
+
+.button-container {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap: 10px;
+
+    margin:
+        20px 0;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    min-height:
+        42px;
+
+    padding:
+        0 20px;
+
+    border:
+        none;
+
+    border-radius:
+        6px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+button:active {
+    transform:
+        scale(0.98);
+}
+
+
+/* =========================================
+   ADD GUILD
+========================================= */
+
+#addGuild {
+    background-color:
+        var(--green);
+
+    color:
+        #111;
+}
+
+
+#addGuild:hover {
+    background-color:
+        var(--green-dark);
+}
+
+
+/* =========================================
+   CALCULATE
+========================================= */
+
+#calculateButton {
+    background-color:
+        var(--tan);
+
+    color:
+        #111;
+}
+
+
+#calculateButton:hover {
+    background-color:
+        #d6b99b;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+#splitResults {
+    width: 100%;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    background-color:
+        var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+}
+
+
+/* =========================================
+   RESULTS HEADER
+========================================= */
+
+.results-header {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 15px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.results-header h2 {
+    margin: 0;
+
+    color:
+        var(--tan);
+
+    font-size:
+        20px;
+}
+
+
+/* =========================================
+   COPY RESULTS
+========================================= */
+
+#copyResultsButton {
+    flex-shrink:
+        0;
+
+    min-height:
+        36px;
+
+    padding:
+        0 14px;
+
+    border:
+        none;
+
+    border-radius:
+        6px;
+
+    background-color:
+        var(--green);
+
+    color:
+        #111;
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+#copyResultsButton:hover {
+    background-color:
+        var(--green-dark);
+}
+
+
+#copyResultsButton:active {
+    transform:
+        scale(0.98);
+}
+
+
+/* =========================================
+   INDIVIDUAL RESULTS
+========================================= */
+
+.result {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 15px;
+
+    padding:
+        10px 12px;
+
+    margin:
+        6px 0;
+
+    background-color:
+        rgba(255,
+            255,
+            255,
+            0.035);
+
+    border-radius:
+        5px;
+
+    text-align:
+        left;
+}
+
+
+.result-name {
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.result-value {
+    flex-shrink:
+        0;
+
+    font-weight:
+        bold;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.total {
+    padding-top:
+        12px;
+
+    margin-top:
+        15px;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--green);
+
+    font-weight:
+        bold;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page-container {
+        width:
+            calc(100% - 20px);
+
+        margin-top:
+            25px;
+    }
+
+
+    .input-container {
+        grid-template-columns:
+            minmax(0, 1fr) minmax(100px, 30%) 42px;
+
+        gap:
+            10px;
+    }
+
+}
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .nav-container {
+        flex-direction:
+            column;
+
+        padding:
+            10px 0;
+    }
+
+
+    .nav-brand {
+        margin-bottom:
+            5px;
+    }
+
+
+    .nav-links {
+        width: 100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+    }
+
+
+    .nav-links a {
+        min-height:
+            42px;
+
+        padding:
+            0 10px;
+
+        font-size:
+            13px;
+    }
+
+
+    .nav-links a.active::after {
+        left: 10px;
+
+        right: 10px;
+    }
+
+
+    .page-container {
+        width:
+            calc(100% - 16px);
+
+        margin-top:
+            25px;
+    }
+
+
+    .input-container {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr) minmax(90px, 30%) 42px;
+
+        gap:
+            8px;
+
+        padding:
+            12px;
+    }
+
+
+    input {
+        height:
+            44px;
+    }
+
+
+    .button-container {
+        flex-direction:
+            column;
+
+        width:
+            100%;
+    }
+
+
+    .button-container button {
+        width:
+            100%;
+    }
+
+
+    .results-header {
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+
+    .results-header h2 {
+        text-align:
+            left;
+    }
+
+
+    #copyResultsButton {
+        width:
+            100%;
+    }
+
+
+    #splitResults {
+        padding:
+            15px;
+    }
+
+
+    .result {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            3px;
+    }
+
+
+    .result-name {
+        max-width:
+            100%;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .page-header h1 {
+        font-size:
+            22px;
+    }
+
+
+    .loot-card {
+        padding:
+            14px;
+    }
+
+
+    #splitResults {
+        padding:
+            12px;
+    }
+
+
+    .nav-links a {
+        padding:
+            0 7px;
+
+        font-size:
+            12px;
+    }
+
+}
+
+/* =========================================
+   REMOVE GUILD BUTTON
+========================================= */
+
+.input-container {
+    position: relative;
+}
+
+
+.remove-guild {
+
+    width: 42px;
+    min-width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    align-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(180, 70, 70, 0.12);
+
+    color:
+        #d98f8f;
+
+    border:
+        1px solid rgba(180, 70, 70, 0.2);
+
+    border-radius:
+        6px;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.remove-guild i {
+
+    font-size:
+        20px;
+
+}
+
+
+.remove-guild:hover {
+
+    background:
+        rgba(180, 70, 70, 0.22);
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(180, 70, 70, 0.4);
+
+}

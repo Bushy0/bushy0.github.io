@@ -2,212 +2,136 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZvZ Loot Split</title>
-    <link rel="stylesheet" href="./lootsplit.css">
-    <link rel="icon" href="./images/Bushy4k.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Bushy Tools | ZvZ Loot Split</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/lootsplit.css">
+    <link rel="icon" href="./images/LogoTitle.png" type="image/x-icon">
+
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 
     <meta property="og:url" content="https://bushy0.github.io/zvzlootsplit">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ZvZ Loot Split ">
-    <meta property="og:description" content=" ">
+    <meta property="og:title" content="ZvZ Loot Split">
+    <meta property="og:description" content="ZvZ Loot Split Calculator">
     <meta property="og:image" content="https://bushy0.github.io/images/Bushy4k.png">
 
-    <meta name="twitter:title" content="ZvZ Loot Split ">
+    <meta name="twitter:title" content="ZvZ Loot Split">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://bushy0.github.io">
-    <meta property="twitter:url" content="https://bushy0.github.io/zvzlootsplit">
-    <meta name="twitter:description" content=" ">
+    <meta name="twitter:description" content="ZvZ Loot Split Calculator">
     <meta name="twitter:image" content="https://bushy0.github.io/images/Bushy4k.png">
-    <meta content="#69A891" data-react-helmet="true" name="theme-color" />
-    <style>
-        /* Your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            background-image: linear-gradient(#1a1a1ac8, #1a1a1ac8), url(./images/Bushy4k.png);
-            background-size: cover;
-        }
 
-        h1 {
-            color: #c9a88a;
-        }
+    <meta name="theme-color" content="#69A891">
 
-        label {
-            display: inline-block;
-            width: 120px;
-            /* Adjust width as needed */
-            text-align: right;
-            margin-right: 10px;
-        }
-
-        input {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #79b39f;
-            color: #fff;
-            width: calc(30% - 160px);
-            /* Adjust width as needed */
-        }
-
-        .input-container {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="/index">Home</a>
-        <!-- <a href="/lootsplit">Loot Split Calculator</a> -->
-        <a href="/zvzlootsplit">ZVZ Loot Split</a>
-        <a href="/refine">Refine Calculator</a>
-        <!-- <a href="/builds">Builds</a> -->
-    </div>
 
-    <h1>ZvZ Loot Split Calculator</h1>
-    <br><br>
-    <label for="splitValue">Value of Split:</label>
-    <input type="text" id="splitValue" value="0" onclick="this.select()" onblur="formatInput(this)">
-    <br>
+    <nav class="navbar">
 
-    <!-- Input containers for 10 guilds -->
-    <div class="input-container">
-        <label for="guild1Name">Name:</label>
-        <input type="text" id="guild1Name" value="Guild 1" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild1Attendance">Attendance:</label>
-        <input type="number" id="guild1Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+        <div class="nav-container">
 
-    <div class="input-container">
-        <label for="guild2Name">Name:</label>
-        <input type="text" id="guild2Name" value="Guild 2" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild2Attendance">Attendance:</label>
-        <input type="number" id="guild2Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+            <a href="/index" class="nav-brand">
 
-    <div class="input-container">
-        <label for="guild3Name">Name:</label>
-        <input type="text" id="guild3Name" value="Guild 3" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild3Attendance">Attendance:</label>
-        <input type="number" id="guild3Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+                <img src="./images/LogoTitle.png" alt="Bushy" class="nav-logo">
 
-    <div class="input-container">
-        <label for="guild4Name">Name:</label>
-        <input type="text" id="guild4Name" value="Guild 4" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild4Attendance">Attendance:</label>
-        <input type="number" id="guild4Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+                <span>
+                    Bushy Tools
+                </span>
 
-    <div class="input-container">
-        <label for="guild5Name">Name:</label>
-        <input type="text" id="guild5Name" value="Guild 5" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild5Attendance">Attendance:</label>
-        <input type="number" id="guild5Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+            </a>
 
-    <div class="input-container">
-        <label for="guild6Name">Name:</label>
-        <input type="text" id="guild6Name" value="Guild 6" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild6Attendance">Attendance:</label>
-        <input type="number" id="guild6Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+            <div class="nav-links">
 
-    <div class="input-container">
-        <label for="guild7Name">Name:</label>
-        <input type="text" id="guild7Name" value="Guild 7" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild7Attendance">Attendance:</label>
-        <input type="number" id="guild7Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+                <a href="/index">
+                    Home
+                </a>
 
-    <div class="input-container">
-        <label for="guild8Name">Name:</label>
-        <input type="text" id="guild8Name" value="Guild 8" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild8Attendance">Attendance:</label>
-        <input type="number" id="guild8Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+                <a href="/zvzlootsplit" class="active">
+                    ZVZ Loot Split
+                </a>
 
-    <div class="input-container">
-        <label for="guild9Name">Name:</label>
-        <input type="text" id="guild9Name" value="Guild 9" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild9Attendance">Attendance:</label>
-        <input type="number" id="guild9Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+                <a href="/refine">
+                    Refine Calculator
+                </a>
 
-    <div class="input-container">
-        <label for="guild10Name">Name:</label>
-        <input type="text" id="guild10Name" value="Guild 10" onclick="this.select()" onchange="calculateSplits()">
-        <label for="guild10Attendance">Attendance:</label>
-        <input type="number" id="guild10Attendance" min="0" value="0" onclick="this.select()"
-            onchange="calculateSplits()">
-    </div>
+            </div>
 
-    <button onclick="calculateSplits()">Calculate</button>
+        </div>
 
-    <div id="splitResults">
-        <!-- Results will be displayed here -->
-    </div>
+    </nav>
 
-    <script>
-        function formatInput(input) {
-            let value = input.value.replace(/[^\d]/g, '');
-            if (value.length > 0) {
-                value = numberWithCommas(value);
-            } else {
-                value = "0";
-            }
-            input.value = value;
-            calculateSplits();
-        }
+    <main class="page-container">
 
-        function numberWithCommas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
+        <header class="page-header">
 
-        function calculateSplits() {
-            let splitValue = parseFloat(document.getElementById("splitValue").value.replace(/,/g, ""));
+            <h1>
+                ZvZ Loot Split Calculator
+            </h1>
 
-            let guildAttendances = [];
-            let guildNames = [];
-            let totalAttendance = 0;
+            <p>
+                Divide loot based on guild attendance.
+            </p>
 
-            for (let i = 1; i <= 10; i++) {
-                let attendance = parseInt(document.getElementById(`guild${i}Attendance`).value);
-                let name = document.getElementById(`guild${i}Name`).value;
-                guildAttendances.push(attendance);
-                guildNames.push(name);
-                totalAttendance += attendance;
-            }
+        </header>
 
-            if (isNaN(splitValue) || isNaN(totalAttendance) || totalAttendance === 0) {
-                document.getElementById("splitResults").innerHTML = "<p>Please enter valid numbers.</p>";
-                return;
-            }
+        <section class="loot-card">
 
-            let results = guildAttendances.map((attendance, index) => {
-                let share = (attendance / totalAttendance) * splitValue;
-                return `<p>${guildNames[index]}: ${numberWithCommas(Math.floor(share))}</p>`;
-            }).join("");
+            <label for="splitValue">
+                Value of Split
+            </label>
 
-            document.getElementById("splitResults").innerHTML = `<h2>Split Results:</h2>${results}`;
-        }
-    </script>
+            <input type="text" id="splitValue" value="0" inputmode="numeric" autocomplete="off">
+
+        </section>
+
+        <section id="guildInputs" class="guild-list"></section>
+
+        <div class="button-container">
+
+            <button type="button" id="addGuild">
+
+                <i class="bx bx-plus"></i>
+
+                Add Guild
+
+            </button>
+
+
+        </div>
+
+        <section id="splitResults">
+
+            <div class="results-header">
+
+                <h2>
+                    Split Results
+                </h2>
+
+                <button type="button" id="copyResultsButton">
+
+                    <i class="bx bx-copy"></i>
+
+                    Copy Results
+
+                </button>
+
+            </div>
+
+            <p>
+                Enter a loot value and at least one
+                attendance value.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="./js/zvzlootsplitMini.js"></script>
 
 </body>
 

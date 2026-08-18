@@ -1,0 +1,430 @@
+/* =========================================
+   REFINE PAGE
+========================================= */
+
+.refine-card {
+
+    max-width:
+        700px;
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.refine-input {
+
+    width:
+        min(500px,
+            100%);
+
+    margin:
+        0 auto 18px;
+
+    text-align:
+        left;
+
+}
+
+
+.refine-input label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #c9a88a;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.refine-input input,
+.refine-input select {
+
+    width:
+        100%;
+
+    height:
+        44px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid rgba(140,
+            207,
+            185,
+            0.15);
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.10);
+
+    color:
+        #ffffff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        14px;
+
+}
+
+
+.refine-input select {
+
+    cursor:
+        pointer;
+
+}
+
+
+.refine-input select option {
+
+    background:
+        #1a1a1a;
+
+    color:
+        #ffffff;
+
+}
+
+
+.refine-input input:focus,
+.refine-input select:focus {
+
+    border-color:
+        #8ccfb9;
+
+    box-shadow:
+        0 0 0 2px rgba(140,
+            207,
+            185,
+            0.12);
+
+}
+
+
+/* =========================================
+   MINIMUM
+========================================= */
+
+.minimum {
+
+    display:
+        block;
+
+    min-height:
+        16px;
+
+    margin-bottom:
+        4px;
+
+    color:
+        #8ccfb9;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================
+   CALCULATE BUTTON
+========================================= */
+
+#calculateButton {
+
+    width:
+        min(500px,
+            100%);
+
+    height:
+        44px;
+
+    margin:
+        5px auto 0;
+
+    background:
+        #c9a88a;
+
+    color:
+        #ffffff;
+
+}
+
+
+#calculateButton:hover {
+
+    background:
+        #d6b99b;
+
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.refine-results {
+
+    width:
+        min(600px,
+            100%);
+
+    margin:
+        30px auto 0;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid rgba(255,
+            255,
+            255,
+            0.08);
+
+}
+
+
+.refine-results h2 {
+
+    margin:
+        0 0 15px;
+
+    color:
+        #c9a88a;
+
+    font-size:
+        20px;
+
+}
+
+
+.refine-results p {
+
+    color:
+        #999999;
+
+}
+
+
+/* =========================================
+   MATERIAL ROWS
+========================================= */
+
+.required-title {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #8ccfb9;
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.material-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin:
+        5px 0;
+
+    padding:
+        10px 12px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.035);
+
+    border-radius:
+        5px;
+
+    color:
+        #dddddd;
+
+}
+
+
+.material-row strong {
+
+    color:
+        #ffffff;
+
+}
+
+
+.material-row.current {
+
+    background:
+        rgba(140,
+            207,
+            185,
+            0.07);
+
+    border:
+        1px solid rgba(140,
+            207,
+            185,
+            0.15);
+
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.refined-total {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin-top:
+        18px !important;
+
+    padding-top:
+        15px;
+
+    border-top:
+        1px solid rgba(255,
+            255,
+            255,
+            0.08);
+
+    color:
+        #8ccfb9 !important;
+
+    font-weight:
+        bold;
+
+}
+
+
+.refined-total strong {
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error {
+
+    color:
+        #e0a0a0 !important;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .refine-card {
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .refine-input {
+
+        width:
+            100%;
+
+    }
+
+
+    #calculateButton {
+
+        width:
+            100%;
+
+    }
+
+
+    .refine-results {
+
+        width:
+            100%;
+
+    }
+
+
+    .refined-total {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}

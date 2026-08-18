@@ -2,40 +2,148 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="icon" href="./images/Bushy4k.png" type="image/x-icon">
-    <title>Home</title>
+
+    <title>Bushy Tools | Home</title>
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <link rel="icon" href="./images/LogoTitle.png" type="image/x-icon">
+
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
 
     <meta property="og:url" content="https://bushy0.github.io">
+
     <meta property="og:type" content="website">
+
     <meta property="og:title" content="Bushy Tools and Builds">
-    <meta property="og:description" content=" ">
+
+    <meta property="og:description" content="Bushy's tools and calculators.">
+
     <meta property="og:image" content="https://bushy0.github.io/images/Bushy4k.png">
 
     <meta name="twitter:title" content="Bushy Tools and Builds">
+
     <meta name="twitter:card" content="summary_large_image">
+
     <meta property="twitter:domain" content="https://bushy0.github.io">
+
     <meta property="twitter:url" content="https://bushy0.github.io">
-    <meta name="twitter:description" content=" ">
+
+    <meta name="twitter:description" content="Bushy's tools and calculators.">
+
     <meta name="twitter:image" content="https://bushy0.github.io/images/Bushy4k.png">
-    <meta content="#69A891" data-react-helmet="true" name="theme-color" />
+
+    <meta name="theme-color" content="#69A891">
+
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="/index">Home</a>
-        <!-- <a href="/lootsplit">Loot Split Calculator</a> -->
-        <a href="/zvzlootsplit">ZVZ Loot Split</a>
-        <a href="/refine">Refine Calculator</a>
-        <!-- <a href="/builds">Builds</a> -->
-    </div>
 
-    <div class="container">
-        <h1 class="header">Welcome to the Home Page</h1>
-        <p class="description">This is the home page. Click the links at the top or somethin' I don't know.</p>
-    </div>
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="/index" class="nav-brand">
+
+                <img src="./images/LogoTitle.png" alt="Bushy" class="nav-logo">
+
+                <span>
+                    Bushy Tools
+                </span>
+
+            </a>
+
+            <div class="nav-links">
+
+                <a href="/index" class="active">
+                    Home
+                </a>
+
+                <a href="/zvzlootsplit">
+                    ZVZ Loot Split
+                </a>
+
+                <a href="/refine">
+                    Refine Calculator
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main class="page-container">
+
+        <section class="home-card">
+
+            <div class="home-icon">
+
+                <img src="./images/LargeLogo.png" alt="Bushy">
+
+            </div>
+
+            <h1 class="page-title">
+                Welcome to Bushy Tools
+            </h1>
+
+            <p class="page-description">
+                A collection of tools, calculators,
+                and useful things for Albion Online.
+            </p>
+
+            <div class="home-links">
+
+                <a href="/zvzlootsplit" class="home-link">
+
+                    <div>
+
+                        <strong>
+                            ZVZ Loot Split
+                        </strong>
+
+                        <span>
+                            Split loot based on guild attendance.
+                        </span>
+
+                    </div>
+
+                    <span class="arrow">
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </span>
+
+                </a>
+
+                <a href="/refine" class="home-link">
+
+                    <div>
+
+                        <strong>
+                            Refine Calculator
+                        </strong>
+
+                        <span>
+                            Calculate refining costs and returns.
+                        </span>
+
+                    </div>
+
+                    <span class="arrow">
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
 
 </html>
