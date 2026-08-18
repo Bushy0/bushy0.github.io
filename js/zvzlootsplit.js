@@ -1,4 +1,4 @@
-const STARTING_GUILDS = 2;
+const STARTING_GUILDS = 5;
 
 let guildCount = 0;
 
