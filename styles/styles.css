@@ -72,18 +72,9 @@ body {
             #1a1a1ac8),
         url("/images/Bushy4k.png");
 
-    /*
-        IMPORTANT:
-
-        The background has a fixed maximum
-        size instead of "cover".
-
-        This prevents the image from becoming
-        enormous on large screens.
-    */
 
     background-size:
-        1920px auto;
+        2560px auto;
 
     background-position:
         center top;
